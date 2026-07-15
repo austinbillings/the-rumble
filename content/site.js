@@ -167,12 +167,25 @@ export const releases = [
 // MEDIA, live performance & studio videos (YouTube)
 // ---------------------------------------------------------------------------
 export const videos = [
-  { id: "orFrPER_S50", title: "Trouble", context: "Live at Portland Waterfront Blues Festival" },
-  { id: "0jfh06vPmbM", title: "Now You Know", context: "Live at Portland Waterfront Blues Festival" },
-  { id: "y50yKjo6g4k", title: "Riverside", context: "Live from Downman Sounds Studio" },
-  { id: "vBCPXef3gso", title: "Stories from the Battlefield", context: "Live from Downman Sounds Studio" },
-  { id: "5z_MZ5gq7Tc", title: "Wild Man", context: "Live at Portland Waterfront Blues Festival" },
-  { id: "uzhtNYKtjBE", title: "Live from the Maple Leaf", context: "A snippet from our live recording session at the legendary Maple Leaf Bar in New Orleans." },
+  // --- Live performances & sessions ---
+  { id: "orFrPER_S50", title: "Trouble", context: "Live at Portland Waterfront Blues Festival", category: "performance" },
+  { id: "0jfh06vPmbM", title: "Now You Know", context: "Live at Portland Waterfront Blues Festival", category: "performance" },
+  { id: "5z_MZ5gq7Tc", title: "Wild Man", context: "Live at Portland Waterfront Blues Festival", category: "performance" },
+  { id: "y50yKjo6g4k", title: "Riverside", context: "Live from Downman Sounds Studio", category: "performance" },
+  { id: "vBCPXef3gso", title: "Stories from the Battlefield", context: "Live from Downman Sounds Studio", category: "performance" },
+  { id: "7PtEz9xREDA", title: "Now You Know", context: "Live in studio · The Downman Sessions", category: "performance" },
+  { id: "uzhtNYKtjBE", title: "Live from the Maple Leaf", context: "From our live session at the legendary Maple Leaf Bar, New Orleans", category: "performance" },
+  { id: "Ug7ms5f6J_s", title: "Live at Tipitina's", context: "FunkyUncle.live · New Orleans", category: "performance" },
+  { id: "S8eqojvb160", title: "FunkyUncle.live Session", context: "Full livestream set · FunkyUncle.live", category: "performance" },
+  { id: "TPdYxDsxyzo", title: "FOC Concert Series", context: "Full live set", category: "performance" },
+  { id: "KUcZHr-Ikuo", title: "LIVE from New Orleans — Pt. 1", context: "TMTTR Live · produced by Martin Shore", category: "performance" },
+  { id: "gmIV_p0Awmg", title: "LIVE from New Orleans — Pt. 2", context: "TMTTR Live", category: "performance" },
+  { id: "gz1X3CUiBsk", title: "LIVE from New Orleans — Pt. 3", context: "TMTTR Live", category: "performance" },
+  { id: "iIlzJOlsC0Y", title: "LIVE from New Orleans — Pt. 4", context: "TMTTR Live", category: "performance" },
+  { id: "tK30XAA_hRs", title: "LIVE from New Orleans — Pt. 5", context: "TMTTR Live", category: "performance" },
+  // --- Features & interviews ---
+  { id: "_90RBQOS4Es", title: "Your Next Favorite Band", context: "Band feature", category: "feature" },
+  { id: "soNgEtX-1mM", title: "Introducing The Rumble", context: "Band profile", category: "feature" },
 ];
 
 // ---------------------------------------------------------------------------
