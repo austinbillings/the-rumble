@@ -1,7 +1,8 @@
 import { Anton, Inter, UnifrakturMaguntia, Grenze_Gotisch } from "next/font/google";
 import "./globals.css";
 import SiteHeader from "./_components/SiteHeader";
-import SiteFooter from "./_components/SiteFooter";\nimport { AudioProvider } from "./_components/AudioPlayer";
+import SiteFooter from "./_components/SiteFooter";
+import { AudioProvider } from "./_components/AudioPlayer";
 
 const anton = Anton({
   weight: "400",
@@ -16,7 +17,6 @@ const inter = Inter({
   display: "swap",
 });
 
-// Blackletter display faces for the album-era refresh.
 const unifraktur = UnifrakturMaguntia({
   weight: "400",
   subsets: ["latin"],
@@ -56,9 +56,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${anton.variable} ${inter.variable} ${unifraktur.variable} ${grenzeGotisch.variable}`}>
       <body>
-        <SiteHeader />
-        <main>{children}</main>
-        <SiteFooter />
+        <AudioProvider>
+          <SiteHeader />
+          <main>{children}</main>
+          <SiteFooter />
+        </AudioProvider>
       </body>
     </html>
   );

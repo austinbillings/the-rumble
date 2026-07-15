@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { nav } from "@/content/site";\nimport { HeaderPlayer, ListenButton } from "./AudioPlayer";
+import { nav } from "@/content/site";
+import { HeaderPlayer, ListenButton } from "./AudioPlayer";
 
 export default function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
@@ -22,7 +23,6 @@ export default function SiteHeader() {
     return () => { document.body.style.overflow = ""; };
   }, [open]);
 
-  // Close the mobile menu whenever the route changes.
   useEffect(() => { setOpen(false); }, [pathname]);
 
   const isActive = (href) =>
@@ -48,6 +48,8 @@ export default function SiteHeader() {
             ))}
             <ListenButton className="btn btn--primary nav__cta" />
           </nav>
+
+          <HeaderPlayer />
 
           <button
             className="burger"
