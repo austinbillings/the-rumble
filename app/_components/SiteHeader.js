@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { nav } from "@/content/site";
+import { nav } from "@/content/site";\nimport { HeaderPlayer, ListenButton } from "./AudioPlayer";
 
 export default function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
@@ -46,9 +46,7 @@ export default function SiteHeader() {
                 {item.label}
               </Link>
             ))}
-            <Link href="/music" className="btn btn--primary nav__cta">
-              Listen
-            </Link>
+            <ListenButton className="btn btn--primary nav__cta" />
           </nav>
 
           <button

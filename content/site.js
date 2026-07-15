@@ -202,4 +202,13 @@ export const merch = [
   { name: "Rumble Stickers", price: "6-pack $14 · 3-pack $7", image: "/images/merch/stickers.webp" },
 ];
 
-export const merchShopUrl = "https://therumbleband.com/shop";
+export const merchShopUrl = "https://therumbleband.com/shop";\n
+// ---------------------------------------------------------------------------
+// AUDIO, powers the single in-browser player in the header.
+// TODO: set each `src` to a hosted audio file (album previews or full tracks).
+// Until a src is present, the Listen button falls back to the /music page.
+// ---------------------------------------------------------------------------
+export const tracks = [
+  { id: "aint-no-dying", title: "Ain\u2019t No Dying", artist: "The Rumble", src: "", cover: "/images/band/hero-noe-9510.jpg" },
+];
+export const featuredTrackId = "aint-no-dying";

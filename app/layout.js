@@ -1,7 +1,7 @@
 import { Anton, Inter, UnifrakturMaguntia, Grenze_Gotisch } from "next/font/google";
 import "./globals.css";
 import SiteHeader from "./_components/SiteHeader";
-import SiteFooter from "./_components/SiteFooter";
+import SiteFooter from "./_components/SiteFooter";\nimport { AudioProvider } from "./_components/AudioPlayer";
 
 const anton = Anton({
   weight: "400",

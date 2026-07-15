@@ -560,3 +560,19 @@ h2.display { line-height: 1.02; }
   letter-spacing: 0;
 }
 .brand b { font-weight: 400; }
+
+
+/* ---------- Header mini audio player ---------- */
+.miniplayer { display: inline-flex; align-items: center; gap: 0.6rem; }
+.miniplayer__btn {
+  width: 38px; height: 38px; border-radius: 999px;
+  border: 1.5px solid var(--line-strong); background: var(--crimson);
+  color: #fff; display: grid; place-items: center; cursor: pointer;
+  transition: background 0.18s ease;
+}
+.miniplayer__btn:hover { background: var(--crimson-bright); }
+.miniplayer__meta { display: flex; flex-direction: column; gap: 4px; min-width: 110px; max-width: 190px; }
+.miniplayer__title { font-size: 0.8rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.miniplayer__bar { height: 3px; background: var(--line); border-radius: 2px; overflow: hidden; }
+.miniplayer__bar > span { display: block; height: 100%; background: var(--gold); transition: width 0.2s linear; }
+@media (max-width: 760px) { .miniplayer__meta { display: none; } }
