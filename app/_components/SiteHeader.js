@@ -33,7 +33,7 @@ export default function SiteHeader() {
       <header className={`hdr ${scrolled ? "hdr--scrolled" : ""}`}>
         <div className="wrap hdr__inner">
           <Link href="/" className="brand" aria-label="The Rumble, home">
-            THE&nbsp;<b>RUMBLE</b>
+            The&nbsp;<b>Rumble</b>
           </Link>
 
           <nav className="nav">

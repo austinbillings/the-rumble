@@ -528,3 +528,35 @@ h3.display { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
 .cta-band p { color: rgba(255,255,255,0.85); max-width: 50ch; margin: 1rem auto 2rem; }
 .cta-band .btn--gold { box-shadow: 0 14px 40px rgba(0,0,0,0.3); }
 
+
+
+/* ============================================================
+   Blackletter typography, album-era refresh (July 2026)
+   UnifrakturMaguntia = biggest headings + navbar wordmark
+   Grenze Gotisch      = subheads / higher-legibility headings
+   Body stays Inter (sans).
+   ============================================================ */
+:root {
+  --font-blackletter: var(--font-unifraktur), "UnifrakturMaguntia", serif;
+  --font-gothic: var(--font-grenze), "Grenze Gotisch", serif;
+}
+h1.display {
+  font-family: var(--font-blackletter);
+  text-transform: none;
+  line-height: 1.04;
+  letter-spacing: 0;
+  font-size: clamp(2.6rem, 9.5vw, 7rem);
+}
+h2.display,
+h3.display {
+  font-family: var(--font-gothic);
+  text-transform: none;
+  letter-spacing: 0.01em;
+}
+h2.display { line-height: 1.02; }
+.brand {
+  font-family: var(--font-blackletter);
+  text-transform: none;
+  letter-spacing: 0;
+}
+.brand b { font-weight: 400; }
