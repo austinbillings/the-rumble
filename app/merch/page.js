@@ -1,13 +1,17 @@
 import Image from "next/image";
 import Reveal from "../_components/Reveal";
-import { merch, merchShopUrl } from "@/content/site";
+import { merchShopUrl } from "@/content/site";
+import { getMerch } from "@/sanity/lib/data";
+
+export const revalidate = 60;
 
 export const metadata = {
   title: "Merch",
   description: "Official The Rumble merch; tees, muscle tanks, and sticker sets.",
 };
 
-export default function MerchPage() {
+export default async function MerchPage() {
+  const merch = await getMerch();
   return (
     <>
       <header className="pagehead">
@@ -25,7 +29,7 @@ export default function MerchPage() {
           {merch.map((p, i) => (
             <Reveal key={p.name} delay={(i % 4) * 60}>
               <a
-                href={merchShopUrl}
+                href={p.shopUrl || merchShopUrl}
                 target="_blank"
                 rel="noreferrer"
                 className="product"

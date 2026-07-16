@@ -1,7 +1,10 @@
 import Link from "next/link";
 import Reveal from "../_components/Reveal";
 import { IconArrow } from "../_components/icons";
-import { releases, social } from "@/content/site";
+import { social } from "@/content/site";
+import { getReleases } from "@/sanity/lib/data";
+
+export const revalidate = 60;
 
 export const metadata = {
   title: "Music",
@@ -9,7 +12,8 @@ export const metadata = {
     "Stream The Rumble's Grammy-nominated albums Stories from the Battlefield and Live at the Maple Leaf Bar, available on all platforms.",
 };
 
-export default function MusicPage() {
+export default async function MusicPage() {
+  const releases = await getReleases();
   return (
     <>
       <header className="pagehead">

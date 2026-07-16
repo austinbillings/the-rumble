@@ -1,5 +1,8 @@
 import VideoCard from "../_components/VideoCard";
-import { videos, social } from "@/content/site";
+import { social } from "@/content/site";
+import { getVideos } from "@/sanity/lib/data";
+
+export const revalidate = 60;
 
 export const metadata = {
   title: "Media",
@@ -7,7 +10,8 @@ export const metadata = {
     "Watch The Rumble live and in the studio, from the Portland Waterfront Blues Festival and Downman Sounds Studio to Tipitina's and the legendary Maple Leaf Bar.",
 };
 
-export default function MediaPage() {
+export default async function MediaPage() {
+  const videos = await getVideos();
   const performances = videos.filter((v) => v.category !== "feature");
   const features = videos.filter((v) => v.category === "feature");
 
