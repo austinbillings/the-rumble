@@ -9,7 +9,7 @@ export default function SiteFooter() {
       <div className="wrap ftr__top">
         <div>
           <Link href="/" className="brand" style={{ fontSize: "1.8rem" }}>
-            THE&nbsp;<b>RUMBLE</b>
+            The&nbsp;<b>Rumble</b>
           </Link>
           <p className="dim" style={{ marginTop: "1rem", maxWidth: "34ch" }}>
             Grammy-nominated Mardi Gras Indian funk from New Orleans, fronted by

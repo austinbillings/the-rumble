@@ -535,8 +535,8 @@ h3.display { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
 
 /* ============================================================
    Blackletter typography, album-era refresh (July 2026)
-   UnifrakturMaguntia = biggest headings + navbar wordmark
-   Grenze Gotisch      = subheads / higher-legibility headings
+   UnifrakturMaguntia = all display headings + navbar wordmark
+   Grenze Gotisch      = available for subheads (--font-gothic)
    Body stays Inter (sans).
    ============================================================ */
 :root {
@@ -547,14 +547,14 @@ h1.display {
   font-family: var(--font-blackletter);
   text-transform: none;
   line-height: 1.04;
-  letter-spacing: 0;
+  letter-spacing: -0.025em;
   font-size: clamp(2.6rem, 9.5vw, 7rem);
 }
 h2.display,
 h3.display {
-  font-family: var(--font-gothic);
+  font-family: var(--font-blackletter);
   text-transform: none;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.015em;
 }
 h2.display { line-height: 1.02; }
 .brand {
