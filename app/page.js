@@ -2,9 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import Reveal from "./_components/Reveal";
 import { IconArrow } from "./_components/icons";
-import { home, releases, videos } from "@/content/site";
+import { home } from "@/content/site";
+import { getReleases, getVideos } from "@/sanity/lib/data";
 
-export default function HomePage() {
+export const revalidate = 60;
+
+export default async function HomePage() {
+  const [releases, videos] = await Promise.all([getReleases(), getVideos()]);
   return (
     <>
       {/* HERO */}
@@ -40,6 +44,9 @@ export default function HomePage() {
         </div>
         <div className="hero__scroll">Scroll</div>
       </section>
+
+      {/* Everything below scrolls over the fixed hero backdrop */}
+      <div className="afterhero">
 
       {/* MARQUEE */}
       <div className="marquee" aria-hidden="true">
@@ -173,6 +180,8 @@ export default function HomePage() {
           <Link href="/shows" className="btn btn--gold">View Tour Dates</Link>
         </Reveal>
       </section>
+
+      </div>
     </>
   );
 }

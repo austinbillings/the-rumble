@@ -241,7 +241,7 @@ h3.display { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
 }
 
 /* ---------- Footer ---------- */
-.ftr { border-top: 1px solid var(--line); background: var(--bg-elev); }
+.ftr { position: relative; z-index: 2; border-top: 1px solid var(--line); background: var(--bg-elev); }
 .ftr__top {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr;
@@ -302,6 +302,9 @@ h3.display { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
     radial-gradient(120% 70% at 18% 100%, rgba(208,2,27,0.32), transparent 58%);
 }
 .hero__inner { position: relative; z-index: 2; width: 100%; padding-bottom: clamp(3rem, 7vw, 6rem); }
+/* Post-hero content is an opaque curtain that scrolls over the fixed backdrop;
+   without a stacking context it paints underneath the fixed media + scrim. */
+.afterhero { position: relative; z-index: 2; background: var(--bg); }
 /* On phones, a fixed background is janky, so pin it back to the section.
    The portrait crop also shows more of the group, so lift it further to keep
    faces clear of the badge and headline. */
