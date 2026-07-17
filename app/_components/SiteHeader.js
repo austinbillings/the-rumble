@@ -28,6 +28,8 @@ export default function SiteHeader() {
   const isActive = (href) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
+  const navItems = nav.filter((item) => !item.hideInNav);
+
   return (
     <>
       <header className={`hdr ${scrolled ? "hdr--scrolled" : ""}`}>
@@ -37,7 +39,7 @@ export default function SiteHeader() {
           </Link>
 
           <nav className="nav">
-            {nav.map((item) => (
+            {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -75,7 +77,7 @@ export default function SiteHeader() {
 
       <div className={`mobilemenu ${open ? "open" : ""}`}>
         <Link href="/">Home</Link>
-        {nav.map((item) => (
+        {navItems.map((item) => (
           <Link key={item.href} href={item.href}>
             {item.label}
           </Link>

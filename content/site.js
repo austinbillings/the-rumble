@@ -13,7 +13,8 @@ export const band = {
 
 export const nav = [
   { label: "Bio", href: "/bio" },
-  { label: "The Suit", href: "/suit" },
+  // hideInNav: page stays live (and linked in the footer), just not in the navbar
+  { label: "The Suit", href: "/suit", hideInNav: true },
   { label: "Shows", href: "/shows" },
   { label: "Media", href: "/media" },
   { label: "Music", href: "/music" },
