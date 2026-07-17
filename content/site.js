@@ -61,6 +61,25 @@ export const home = {
 };
 
 // ---------------------------------------------------------------------------
+// FEATURED ALBUM — the homepage blade.
+// TODO: confirm title spelling with the band ("Ain't No Dying" per the cover
+// art vs "Ain't No Dyin'" in a press listing), and swap CTAs for a real
+// listen/pre-save URL once one exists.
+// ---------------------------------------------------------------------------
+export const featuredAlbum = {
+  eyebrow: "The New Album",
+  title: "Ain't No Dying",
+  cover: "/images/album/aint-no-dying.jpg",
+  coverAlt:
+    "Ain't No Dying album cover: Big Chief Joseph Boudreaux Jr. and a Northside Skull and Bone Gang member in a New Orleans cemetery, with a single red feather",
+  blurb:
+    "The Rumble returns with Ain't No Dying — featuring the single “Burn It Down.”",
+  note: "Out soon",
+  primaryCta: { label: "Get Notified", href: "/contact" },
+  secondaryCta: { label: "Explore the Music", href: "/music" },
+};
+
+// ---------------------------------------------------------------------------
 // BIO
 // ---------------------------------------------------------------------------
 export const bio = {

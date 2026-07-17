@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Reveal from "./_components/Reveal";
 import { IconArrow } from "./_components/icons";
-import { home } from "@/content/site";
+import { home, featuredAlbum } from "@/content/site";
 import { getReleases, getVideos } from "@/sanity/lib/data";
 
 export const revalidate = 60;
@@ -59,6 +59,36 @@ export default async function HomePage() {
           ))}
         </div>
       </div>
+
+      {/* FEATURED ALBUM */}
+      <section className="albumblade">
+        <div className="wrap albumblade__inner">
+          <Reveal className="albumblade__cover">
+            <Image
+              src={featuredAlbum.cover}
+              alt={featuredAlbum.coverAlt}
+              width={1319}
+              height={1312}
+              sizes="(max-width: 880px) 88vw, 44vw"
+              priority={false}
+            />
+          </Reveal>
+          <Reveal className="albumblade__text" delay={120}>
+            <p className="eyebrow">{featuredAlbum.eyebrow}</p>
+            <h2 className="display albumblade__title">{featuredAlbum.title}</h2>
+            <p className="albumblade__note">{featuredAlbum.note}</p>
+            <p className="lead dim albumblade__blurb">{featuredAlbum.blurb}</p>
+            <div className="albumblade__cta">
+              <Link href={featuredAlbum.primaryCta.href} className="btn btn--primary">
+                {featuredAlbum.primaryCta.label} <IconArrow style={{ width: 16, height: 16 }} />
+              </Link>
+              <Link href={featuredAlbum.secondaryCta.href} className="btn btn--ghost">
+                {featuredAlbum.secondaryCta.label}
+              </Link>
+            </div>
+          </Reveal>
+        </div>
+      </section>
 
       {/* INTRO */}
       <section className="section wrap">
