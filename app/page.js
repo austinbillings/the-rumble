@@ -150,7 +150,7 @@ export default async function HomePage() {
             <Image src={home.galleryImages[0]} alt="The Rumble live" width={700} height={700} sizes="25vw" style={{ height: "100%" }} />
           </Link>
           <Link href="/bio">
-            <Image src={home.heroImage} alt="The Rumble" width={700} height={700} sizes="25vw" style={{ height: "100%" }} />
+            <Image src={home.galleryImages[4]} alt="The Rumble" width={700} height={700} sizes="25vw" style={{ height: "100%" }} />
           </Link>
         </div>
       </section>

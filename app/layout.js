@@ -44,7 +44,7 @@ export const metadata = {
     description:
       "Grammy-nominated New Orleans Mardi Gras Indian funk. New album Stories from the Battlefield out now.",
     type: "website",
-    images: ["/images/band/hero-noe-9510.jpg"],
+    images: ["/images/band/noe-studio-green.jpg"],
   },
 };
 
