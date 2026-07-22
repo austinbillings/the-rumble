@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Reveal from "../_components/Reveal";
-import { suit } from "@/content/site";
+import { suit, contact } from "@/content/site";
 
 export const metadata = {
   title: "The Suit",
@@ -83,8 +83,9 @@ export default function SuitPage() {
           <h2 className="display" style={{ marginTop: "1rem" }}>{donate.title}</h2>
           <p className="dim" style={{ fontSize: "1.05rem", maxWidth: "62ch" }}>{donate.blurb}</p>
           <p className="dim" style={{ maxWidth: "62ch" }}>{donate.statsIntro}</p>
+          {/* No online donation flow yet — email is the honest path for v1. */}
           <a
-            href="/contact"
+            href={`mailto:${contact.general}?subject=${encodeURIComponent("Supporting the Suit")}`}
             className="btn btn--gold"
             style={{ marginTop: "1rem" }}
           >

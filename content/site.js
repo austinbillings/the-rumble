@@ -44,8 +44,7 @@ export const bandsintownArtistId = "id_15516447";
 export const home = {
   heroTitle: "The Rumble",
   heroSubtitle: "Ft. Chief Joseph Boudreaux Jr.",
-  heroBanner:
-    "New Grammy-nominated album Stories from the Battlefield now available",
+  heroBanner: "Ain't No Dying — the new album from The Rumble, out soon",
   heroImage: "/images/band/noe-studio-green.jpg",
   intro:
     "The Rumble was formed in 2021, and has since been nominated two times for a Grammy. They are a dynamic band dedicated to preserving and evolving New Orleans' rich musical heritage. Fronted by Big Chief Joseph Boudreaux Jr. of the Young Eagles Black Masking Indian tribe, the band seamlessly blends past, present, and future elements of New Orleans culture into their sound. Their songs draw from Mardi Gras Indian funk, brass band traditions, jazz, and hip-hop, creating a vibrant and modern take on iconic styles pioneered by groups like The Meters, Wild Magnolias, and Neville Brothers.",

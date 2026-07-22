@@ -42,7 +42,7 @@ export const metadata = {
   openGraph: {
     title: "The Rumble, Ft. Chief Joseph Boudreaux Jr.",
     description:
-      "Grammy-nominated New Orleans Mardi Gras Indian funk. New album Stories from the Battlefield out now.",
+      "Grammy-nominated New Orleans Mardi Gras Indian funk. New album Ain't No Dying out soon.",
     type: "website",
     images: ["/images/band/noe-studio-green.jpg"],
   },
