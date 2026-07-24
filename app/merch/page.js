@@ -26,15 +26,11 @@ export default async function MerchPage() {
 
       <section className="section wrap">
         <div className="merchgrid">
-          {merch.map((p, i) => (
-            <Reveal key={p.name} delay={(i % 4) * 60}>
-              <a
-                href={p.shopUrl || merchShopUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="product"
-              >
+          {merch.map((p, i) => {
+            const card = (
+              <>
                 <div className="product__img">
+                  {p.soldOut && <span className="product__badge">Sold out</span>}
                   <Image
                     src={p.image}
                     alt={p.name}
@@ -44,10 +40,28 @@ export default async function MerchPage() {
                   />
                 </div>
                 <div className="product__name">{p.name}</div>
-                <div className="product__price">{p.price || "View in shop"}</div>
-              </a>
-            </Reveal>
-          ))}
+                <div className="product__price">
+                  {p.soldOut ? "Sold out" : p.price || "View in shop"}
+                </div>
+              </>
+            );
+            return (
+              <Reveal key={p.name} delay={(i % 4) * 60}>
+                {p.soldOut ? (
+                  <div className="product product--soldout">{card}</div>
+                ) : (
+                  <a
+                    href={p.shopUrl || merchShopUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="product"
+                  >
+                    {card}
+                  </a>
+                )}
+              </Reveal>
+            );
+          })}
         </div>
       </section>
 
