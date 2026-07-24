@@ -5,7 +5,7 @@
 
 export const band = {
   name: "The Rumble",
-  fullName: "The Rumble Ft. Chief Joseph Boudreaux Jr.",
+  fullName: "The Rumble Ft. Big Chief Joseph Boudreaux Jr.",
   tagline: "New Orleans Mardi Gras Indian funk",
   hometown: "New Orleans, Louisiana",
   formed: 2021,
@@ -43,8 +43,9 @@ export const bandsintownArtistId = "id_15516447";
 // ---------------------------------------------------------------------------
 export const home = {
   heroTitle: "The Rumble",
-  heroSubtitle: "Ft. Chief Joseph Boudreaux Jr.",
-  heroBanner: "Ain't No Dying — the new album from The Rumble, out soon",
+  heroSubtitle: "Ft. Big Chief Joseph Boudreaux Jr.",
+  heroBanner: "“Second Line For Me” — the lead single from Ain't No Dying — out now",
+  heroBannerHref: "https://found.ee/secondline",
   heroImage: "/images/band/noe-studio-green.jpg",
   intro:
     "The Rumble was formed in 2021, and has since been nominated two times for a Grammy. They are a dynamic band dedicated to preserving and evolving New Orleans' rich musical heritage. Fronted by Big Chief Joseph Boudreaux Jr. of the Young Eagles Black Masking Indian tribe, the band seamlessly blends past, present, and future elements of New Orleans culture into their sound. Their songs draw from Mardi Gras Indian funk, brass band traditions, jazz, and hip-hop, creating a vibrant and modern take on iconic styles pioneered by groups like The Meters, Wild Magnolias, and Neville Brothers.",
@@ -76,10 +77,10 @@ export const featuredAlbum = {
   coverAlt:
     "Ain't No Dying album cover: Big Chief Joseph Boudreaux Jr. and a Northside Skull and Bone Gang member in a New Orleans cemetery, with a single red feather",
   blurb:
-    "The Rumble returns with Ain't No Dying — featuring the single “Burn It Down.”",
+    "The Rumble returns with Ain't No Dying — the lead single “Second Line For Me” is out now.",
   note: "Out soon",
-  primaryCta: { label: "Get Notified", href: "/contact" },
-  secondaryCta: { label: "Explore the Music", href: "/music" },
+  primaryCta: { label: "Listen to the Single", href: "https://found.ee/secondline" },
+  secondaryCta: { label: "Get Notified", href: "/contact" },
 };
 
 // ---------------------------------------------------------------------------
@@ -106,7 +107,7 @@ export const bio = {
 // THE SUIT
 // ---------------------------------------------------------------------------
 export const suit = {
-  heading: "About Chief Joseph's Suit",
+  heading: "About Big Chief Joseph's Suit",
   images: ["/images/suit/suit-1.jpg", "/images/suit/suit-2.jpg", "/images/suit/suit-3.jpg"],
   sections: [
     {
@@ -126,9 +127,9 @@ export const suit = {
     {
       title: "The Making of the Suit",
       paragraphs: [
-        "The process of building a new suit begins shortly after the previous Mardi Gras ends. It is a year-long labor of devotion. Each suit is designed and stitched by hand, often by the Chief himself, family members, and trusted tribe artisans.",
-        "Creating a full suit can take 5,000 to 7,000 hours of handwork over the year, the equivalent of several full-time jobs. For Chiefs like Joseph Boudreaux Jr., this work is done late into the night, all while juggling family, music, and leadership responsibilities.",
-        "A single suit may contain between 500,000 to over 1 million individual glass beads, each hand-stitched into intricate, story-rich designs. These beads form panels depicting legends, history, nature, and spiritual symbols unique to the tribe and the Chief's message that year.",
+        "The process of building a new suit begins shortly after the previous Mardi Gras ends. It is a year-long labor of devotion. Each suit is designed and stitched by hand, often by the Big Chief himself, family members, and trusted tribe artisans.",
+        "Creating a full suit can take 5,000 to 7,000 hours of handwork over the year, the equivalent of several full-time jobs. For Big Chiefs like Joseph Boudreaux Jr., this work is done late into the night, all while juggling family, music, and leadership responsibilities.",
+        "A single suit may contain between 500,000 to over 1 million individual glass beads, each hand-stitched into intricate, story-rich designs. These beads form panels depicting legends, history, nature, and spiritual symbols unique to the tribe and the Big Chief's message that year.",
         "The suit is built layer by layer with canvas panels, velvet, rhinestones, ostrich and turkey feathers, sequins, jewels, wire, cardboard, and hand-dyed elements. The resulting ensemble includes an elaborate crown, chest plate, back piece, apron, leggings, and arm pieces, sometimes standing over 10 feet tall when fully assembled.",
       ],
     },
@@ -140,7 +141,7 @@ export const suit = {
       roles: [
         { name: "Big Chief", desc: "The leader and storyteller of the tribe" },
         { name: "Spy Boy", desc: "The front scout, first to encounter rival tribes or police" },
-        { name: "Flag Boy", desc: "The communicator between Spy Boy and Chief, ensuring safe passage through the streets" },
+        { name: "Flag Boy", desc: "The communicator between Spy Boy and Big Chief, ensuring safe passage through the streets" },
         { name: "Wild Man", desc: "The fierce protector and enforcer" },
         { name: "Big Queen", desc: "Female leader supporting Big Chief who represents elegance, strength, and spiritual presence" },
       ],
@@ -168,6 +169,13 @@ export const suit = {
 // MUSIC
 // ---------------------------------------------------------------------------
 export const releases = [
+  {
+    title: "Second Line For Me",
+    year: "2026",
+    note: "Lead single from the upcoming album Ain't No Dying",
+    listenUrl: "https://found.ee/secondline",
+    tag: "New Single · Out Now",
+  },
   {
     title: "Stories from the Battlefield",
     year: "2024",
@@ -213,17 +221,21 @@ export const videos = [
 // ---------------------------------------------------------------------------
 // MERCH
 // ---------------------------------------------------------------------------
-// Product pages live on the Soul South Tees store (soulsouthtees.com);
-// the muscle tanks are no longer listed there, so they're marked sold out.
+// Mirrors The Rumble collection on the Soul South Tees store (soulsouthtees.com):
+// same products, order, and prices. The muscle tanks are no longer listed
+// there, so they're marked sold out and kept at the end.
+const shopBase = "https://www.soulsouthtees.com/collections/the-rumble-ft-chief-joseph-boudreaux-jr/products";
 export const merch = [
+  { name: "Live at the Maple Leaf (Double Album)", price: "From $50", image: "/images/merch/maple-leaf-double-album.png", shopUrl: `${shopBase}/the-rumble-record` },
+  { name: "The Rumble “R” Sticker Set", price: "$9", image: "/images/merch/r-sticker-set.png", shopUrl: `${shopBase}/the-rumble-r-sticker-set` },
+  { name: "The Rumble “R” Tee", price: "From $35", image: "/images/merch/r-tee.png", shopUrl: `${shopBase}/the-rumble-r-tee` },
+  { name: "The Rumble Logo Tee", price: "From $35", image: "/images/merch/logo-tee.png", shopUrl: `${shopBase}/the-rumble-logo-tee` },
+  { name: "Rumble Stickers (3-Pack)", price: "$7", image: "/images/merch/stickers-3-pack.png", shopUrl: `${shopBase}/copy-of-the-rumble-sticker-set-3-pack-1` },
+  { name: "Rumble Stickers (6-Pack)", price: "$14", image: "/images/merch/stickers-6-pack.png", shopUrl: `${shopBase}/sticker-set-6-pack` },
+  { name: "The Rumble Tee: Big Chief Illustration", price: "$35", image: "/images/merch/chief-illustration-tee.png", shopUrl: `${shopBase}/the-rumble-ft-chief-joseph-boudreaux-jr-chief-illustration` },
+  { name: "The Rumble Inaugural Tee", price: "From $35", image: "/images/merch/inaugural-tee.png", shopUrl: `${shopBase}/the-rumble-inaugural-tee-lmtd-ed` },
   { name: "The Rumble Logo Muscle Tank", price: "$35", image: "/images/merch/logo-muscle-tank.png", soldOut: true },
-  { name: "The Rumble Logo Tee", price: null, image: "/images/merch/logo-tee.png", shopUrl: "https://www.soulsouthtees.com/collections/the-rumble-ft-chief-joseph-boudreaux-jr/products/the-rumble-logo-tee" },
   { name: "The Rumble “R” Muscle Tank", price: "$35", image: "/images/merch/r-muscle-tank.png", soldOut: true },
-  { name: "The Rumble “R” Tee", price: null, image: "/images/merch/r-tee.png", shopUrl: "https://www.soulsouthtees.com/collections/the-rumble-ft-chief-joseph-boudreaux-jr/products/the-rumble-r-tee" },
-  { name: "The Rumble “R” Sticker Set", price: "$9", image: "/images/merch/r-sticker-set.png", shopUrl: "https://www.soulsouthtees.com/collections/the-rumble-ft-chief-joseph-boudreaux-jr/products/the-rumble-r-sticker-set" },
-  { name: "The Rumble Inaugural Tee", price: null, image: "/images/merch/inaugural-tee.png", shopUrl: "https://www.soulsouthtees.com/collections/the-rumble-ft-chief-joseph-boudreaux-jr/products/the-rumble-inaugural-tee-lmtd-ed" },
-  { name: "The Rumble Tee: Chief Illustration", price: null, image: "/images/merch/chief-illustration-tee.png", shopUrl: "https://www.soulsouthtees.com/collections/the-rumble-ft-chief-joseph-boudreaux-jr/products/the-rumble-ft-chief-joseph-boudreaux-jr-chief-illustration" },
-  { name: "Rumble Stickers", price: "6-pack $14 · 3-pack $7", image: "/images/merch/stickers.webp", shopUrl: "https://www.soulsouthtees.com/collections/the-rumble-ft-chief-joseph-boudreaux-jr/products/sticker-set-6-pack" },
 ];
 
 export const merchShopUrl = "https://therumbleband.com/shop";

@@ -333,6 +333,10 @@ h3.display { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
   font-size: 0.82rem; font-weight: 600; color: var(--ink);
   backdrop-filter: blur(6px);
 }
+a.hero__banner:hover {
+  background: rgba(208,2,27,0.24);
+  border-color: rgba(255,33,56,0.7);
+}
 .hero__banner .pill {
   background: var(--crimson); color: #fff; font-weight: 700; text-transform: uppercase;
   font-size: 0.62rem; letter-spacing: 0.14em; padding: 0.25rem 0.6rem; border-radius: 999px;

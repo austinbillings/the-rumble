@@ -1,6 +1,6 @@
 # The Rumble, Official Site
 
-A new Next.js (App Router) site for **The Rumble Ft. Chief Joseph Boudreaux Jr.**, the
+A new Next.js (App Router) site for **The Rumble Ft. Big Chief Joseph Boudreaux Jr.**, the
 Grammy-nominated New Orleans Mardi Gras Indian funk band. Dark, cinematic aesthetic with
 bold condensed display type (Anton) and a crimson + gold palette.
 

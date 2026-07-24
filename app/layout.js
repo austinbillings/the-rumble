@@ -34,13 +34,13 @@ const grenzeGotisch = Grenze_Gotisch({
 export const metadata = {
   metadataBase: new URL("https://therumbleband.com"),
   title: {
-    default: "The Rumble, Ft. Chief Joseph Boudreaux Jr.",
+    default: "The Rumble, Ft. Big Chief Joseph Boudreaux Jr.",
     template: "%s · The Rumble",
   },
   description:
     "The Rumble is a Grammy-nominated New Orleans band led by Big Chief Joseph Boudreaux Jr., blending Mardi Gras Indian funk, brass band traditions, jazz, and hip-hop.",
   openGraph: {
-    title: "The Rumble, Ft. Chief Joseph Boudreaux Jr.",
+    title: "The Rumble, Ft. Big Chief Joseph Boudreaux Jr.",
     description:
       "Grammy-nominated New Orleans Mardi Gras Indian funk. New album Ain't No Dying out soon.",
     type: "website",

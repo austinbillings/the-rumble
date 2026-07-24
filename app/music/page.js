@@ -9,7 +9,7 @@ export const revalidate = 60;
 export const metadata = {
   title: "Music",
   description:
-    "Stream The Rumble's Grammy-nominated albums Stories from the Battlefield and Live at the Maple Leaf Bar, available on all platforms.",
+    "Stream Second Line For Me, the new single from The Rumble, plus the Grammy-nominated albums Stories from the Battlefield and Live at the Maple Leaf Bar.",
 };
 
 export default async function MusicPage() {
@@ -21,8 +21,9 @@ export default async function MusicPage() {
           <p className="eyebrow">Discography</p>
           <h1 className="display">Music</h1>
           <p className="lead dim">
-            Two Grammy-nominated albums of original New Orleans Mardi Gras Indian
-            funk. Stream on every platform.
+            The new single “Second Line For Me” plus two Grammy-nominated albums
+            of original New Orleans Mardi Gras Indian funk. Stream on every
+            platform.
           </p>
         </div>
       </header>
@@ -33,7 +34,9 @@ export default async function MusicPage() {
             <Reveal key={r.title} className="release" delay={i * 80}>
               <div className="release__num">{String(i + 1).padStart(2, "0")}</div>
               <div>
-                {r.featured && <span className="tag" style={{ marginBottom: "0.6rem" }}>Grammy Nominated</span>}
+                {(r.tag || r.featured) && (
+                  <span className="tag" style={{ marginBottom: "0.6rem" }}>{r.tag || "Grammy Nominated"}</span>
+                )}
                 <div className="release__title">{r.title}</div>
                 <div className="release__meta">{r.year} · {r.note}</div>
               </div>

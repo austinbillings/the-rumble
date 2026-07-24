@@ -25,10 +25,15 @@ export default async function HomePage() {
         </div>
         <div className="hero__scrim" />
         <div className="wrap hero__inner">
-          <span className="hero__banner">
+          <a
+            className="hero__banner"
+            href={home.heroBannerHref}
+            target="_blank"
+            rel="noreferrer"
+          >
             <span className="pill">New</span>
             {home.heroBanner}
-          </span>
+          </a>
           <h1 className="display">
             <span>The Rumble</span>
             <span className="sub">{home.heroSubtitle}</span>
@@ -79,9 +84,14 @@ export default async function HomePage() {
             <p className="albumblade__note">{featuredAlbum.note}</p>
             <p className="lead dim albumblade__blurb">{featuredAlbum.blurb}</p>
             <div className="albumblade__cta">
-              <Link href={featuredAlbum.primaryCta.href} className="btn btn--primary">
+              <a
+                href={featuredAlbum.primaryCta.href}
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn--primary"
+              >
                 {featuredAlbum.primaryCta.label} <IconArrow style={{ width: 16, height: 16 }} />
-              </Link>
+              </a>
               <Link href={featuredAlbum.secondaryCta.href} className="btn btn--ghost">
                 {featuredAlbum.secondaryCta.label}
               </Link>
@@ -161,7 +171,7 @@ export default async function HomePage() {
           <div>
             <p className="eyebrow">Music</p>
             <h2 className="display">Latest Releases</h2>
-            <p className="dim">Two Grammy-nominated albums, available on every platform.</p>
+            <p className="dim">The new single plus two Grammy-nominated albums, available on every platform.</p>
           </div>
           <Link href="/music" className="btn btn--ghost">All music <IconArrow style={{ width: 16, height: 16 }} /></Link>
         </div>
