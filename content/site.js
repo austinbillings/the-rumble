@@ -213,15 +213,17 @@ export const videos = [
 // ---------------------------------------------------------------------------
 // MERCH
 // ---------------------------------------------------------------------------
+// Product pages live on the Soul South Tees store (soulsouthtees.com);
+// items without a shopUrl (the muscle tanks) fall back to merchShopUrl.
 export const merch = [
   { name: "The Rumble Logo Muscle Tank", price: "$35", image: "/images/merch/logo-muscle-tank.png" },
-  { name: "The Rumble Logo Tee", price: null, image: "/images/merch/logo-tee.png" },
+  { name: "The Rumble Logo Tee", price: null, image: "/images/merch/logo-tee.png", shopUrl: "https://www.soulsouthtees.com/collections/the-rumble-ft-chief-joseph-boudreaux-jr/products/the-rumble-logo-tee" },
   { name: "The Rumble “R” Muscle Tank", price: "$35", image: "/images/merch/r-muscle-tank.png" },
-  { name: "The Rumble “R” Tee", price: null, image: "/images/merch/r-tee.png" },
-  { name: "The Rumble “R” Sticker Set", price: "$9", image: "/images/merch/r-sticker-set.png" },
-  { name: "The Rumble Inaugural Tee", price: null, image: "/images/merch/inaugural-tee.png" },
-  { name: "The Rumble Tee: Chief Illustration", price: null, image: "/images/merch/chief-illustration-tee.png" },
-  { name: "Rumble Stickers", price: "6-pack $14 · 3-pack $7", image: "/images/merch/stickers.webp" },
+  { name: "The Rumble “R” Tee", price: null, image: "/images/merch/r-tee.png", shopUrl: "https://www.soulsouthtees.com/collections/the-rumble-ft-chief-joseph-boudreaux-jr/products/the-rumble-r-tee" },
+  { name: "The Rumble “R” Sticker Set", price: "$9", image: "/images/merch/r-sticker-set.png", shopUrl: "https://www.soulsouthtees.com/collections/the-rumble-ft-chief-joseph-boudreaux-jr/products/the-rumble-r-sticker-set" },
+  { name: "The Rumble Inaugural Tee", price: null, image: "/images/merch/inaugural-tee.png", shopUrl: "https://www.soulsouthtees.com/collections/the-rumble-ft-chief-joseph-boudreaux-jr/products/the-rumble-inaugural-tee-lmtd-ed" },
+  { name: "The Rumble Tee: Chief Illustration", price: null, image: "/images/merch/chief-illustration-tee.png", shopUrl: "https://www.soulsouthtees.com/collections/the-rumble-ft-chief-joseph-boudreaux-jr/products/the-rumble-ft-chief-joseph-boudreaux-jr-chief-illustration" },
+  { name: "Rumble Stickers", price: "6-pack $14 · 3-pack $7", image: "/images/merch/stickers.webp", shopUrl: "https://www.soulsouthtees.com/collections/the-rumble-ft-chief-joseph-boudreaux-jr/products/sticker-set-6-pack" },
 ];
 
 export const merchShopUrl = "https://therumbleband.com/shop";
