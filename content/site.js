@@ -38,10 +38,8 @@ export const contact = {
 // Bandsintown widget artist id from the original /shows page.
 export const bandsintownArtistId = "id_15516447";
 
-// Smart link for the album, used by the hero banner, the homepage blade, and the
-// Music page. TODO: replace with the album's own found.ee/smart link — this is
-// currently the lead single's link, which is live but lands on the single.
-export const albumListenUrl = "https://found.ee/secondline";
+// Smart links, used by the hero banner, the homepage album blade, and the Music page.
+export const albumListenUrl = "https://found.ee/aintnodying";
 export const singleListenUrl = "https://found.ee/secondline";
 
 // ---------------------------------------------------------------------------
