@@ -9,7 +9,7 @@ export const revalidate = 60;
 export const metadata = {
   title: "Music",
   description:
-    "Stream Second Line For Me, the new single from The Rumble, plus the Grammy-nominated albums Stories from the Battlefield and Live at the Maple Leaf Bar.",
+    "Stream Ain't No Dying, the new album from The Rumble, out now — plus the Grammy-nominated Stories from the Battlefield and Live at the Maple Leaf Bar.",
 };
 
 export default async function MusicPage() {
@@ -21,9 +21,9 @@ export default async function MusicPage() {
           <p className="eyebrow">Discography</p>
           <h1 className="display">Music</h1>
           <p className="lead dim">
-            The new single “Second Line For Me” plus two Grammy-nominated albums
-            of original New Orleans Mardi Gras Indian funk. Stream on every
-            platform.
+            The new album “Ain't No Dying” is out now, alongside two
+            Grammy-nominated records of original New Orleans Mardi Gras Indian
+            funk. Stream on every platform.
           </p>
         </div>
       </header>

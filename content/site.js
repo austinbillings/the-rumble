@@ -38,14 +38,20 @@ export const contact = {
 // Bandsintown widget artist id from the original /shows page.
 export const bandsintownArtistId = "id_15516447";
 
+// Smart link for the album, used by the hero banner, the homepage blade, and the
+// Music page. TODO: replace with the album's own found.ee/smart link — this is
+// currently the lead single's link, which is live but lands on the single.
+export const albumListenUrl = "https://found.ee/secondline";
+export const singleListenUrl = "https://found.ee/secondline";
+
 // ---------------------------------------------------------------------------
 // HOME
 // ---------------------------------------------------------------------------
 export const home = {
   heroTitle: "The Rumble",
   heroSubtitle: "Ft. Big Chief Joseph Boudreaux Jr.",
-  heroBanner: "“Second Line For Me” — the lead single from Ain't No Dying — out now",
-  heroBannerHref: "https://found.ee/secondline",
+  heroBanner: "Ain't No Dying — the new album — out now",
+  heroBannerHref: albumListenUrl,
   heroImage: "/images/band/noe-studio-green.jpg",
   intro:
     "The Rumble was formed in 2021, and has since been nominated two times for a Grammy. They are a dynamic band dedicated to preserving and evolving New Orleans' rich musical heritage. Fronted by Big Chief Joseph Boudreaux Jr. of the Young Eagles Black Masking Indian tribe, the band seamlessly blends past, present, and future elements of New Orleans culture into their sound. Their songs draw from Mardi Gras Indian funk, brass band traditions, jazz, and hip-hop, creating a vibrant and modern take on iconic styles pioneered by groups like The Meters, Wild Magnolias, and Neville Brothers.",
@@ -67,8 +73,7 @@ export const home = {
 // ---------------------------------------------------------------------------
 // FEATURED ALBUM — the homepage blade.
 // TODO: confirm title spelling with the band ("Ain't No Dying" per the cover
-// art vs "Ain't No Dyin'" in a press listing), and swap CTAs for a real
-// listen/pre-save URL once one exists.
+// art vs "Ain't No Dyin'" in a press listing) — the release itself now settles it.
 // ---------------------------------------------------------------------------
 export const featuredAlbum = {
   eyebrow: "The New Album",
@@ -77,10 +82,10 @@ export const featuredAlbum = {
   coverAlt:
     "Ain't No Dying album cover: Big Chief Joseph Boudreaux Jr. and a Northside Skull and Bone Gang member in a New Orleans cemetery, with a single red feather",
   blurb:
-    "The Rumble returns with Ain't No Dying — the lead single “Second Line For Me” is out now.",
-  note: "Out soon",
-  primaryCta: { label: "Listen to the Single", href: "https://found.ee/secondline" },
-  secondaryCta: { label: "Get Notified", href: "/contact" },
+    "The Rumble's new album is here. Ain't No Dying — featuring “Second Line For Me” — is out now on every streaming platform.",
+  note: "Out now",
+  primaryCta: { label: "Listen Now", href: albumListenUrl },
+  secondaryCta: { label: "Catch Us Live", href: "/shows" },
 };
 
 // ---------------------------------------------------------------------------
@@ -170,11 +175,18 @@ export const suit = {
 // ---------------------------------------------------------------------------
 export const releases = [
   {
+    title: "Ain't No Dying",
+    year: "2026",
+    note: "The new album · Out now on all platforms",
+    listenUrl: albumListenUrl,
+    tag: "New Album · Out Now",
+  },
+  {
     title: "Second Line For Me",
     year: "2026",
-    note: "Lead single from the upcoming album Ain't No Dying",
-    listenUrl: "https://found.ee/secondline",
-    tag: "New Single · Out Now",
+    note: "Lead single from Ain't No Dying",
+    listenUrl: singleListenUrl,
+    tag: "Single",
   },
   {
     title: "Stories from the Battlefield",

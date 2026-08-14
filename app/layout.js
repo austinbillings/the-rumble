@@ -42,7 +42,7 @@ export const metadata = {
   openGraph: {
     title: "The Rumble, Ft. Big Chief Joseph Boudreaux Jr.",
     description:
-      "Grammy-nominated New Orleans Mardi Gras Indian funk. New album Ain't No Dying out soon.",
+      "Grammy-nominated New Orleans Mardi Gras Indian funk. The new album Ain't No Dying is out now.",
     type: "website",
     images: ["/images/band/noe-studio-green.jpg"],
   },

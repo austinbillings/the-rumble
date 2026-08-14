@@ -171,7 +171,7 @@ export default async function HomePage() {
           <div>
             <p className="eyebrow">Music</p>
             <h2 className="display">Latest Releases</h2>
-            <p className="dim">The new single plus two Grammy-nominated albums, available on every platform.</p>
+            <p className="dim">The new album plus two Grammy-nominated records, available on every platform.</p>
           </div>
           <Link href="/music" className="btn btn--ghost">All music <IconArrow style={{ width: 16, height: 16 }} /></Link>
         </div>
