@@ -250,7 +250,8 @@ export const merch = [
   { name: "The Rumble “R” Muscle Tank", price: "$35", image: "/images/merch/r-muscle-tank.png", soldOut: true },
 ];
 
-export const merchShopUrl = "https://therumbleband.com/shop";
+export const merchShopUrl =
+  "https://www.soulsouthtees.com/collections/the-rumble-ft-chief-joseph-boudreaux-jr";
 
 // ----------------------------------------------------------------------------
 // AUDIO — powers the single in-browser player in the header.
