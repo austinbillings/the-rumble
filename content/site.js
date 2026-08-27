@@ -236,6 +236,14 @@ export const videos = [
 // there, so they're marked sold out and kept at the end.
 const shopBase = "https://www.soulsouthtees.com/collections/the-rumble-ft-chief-joseph-boudreaux-jr/products";
 export const merch = [
+  // Sold through Ground Up Music's store, not Soul South Tees, so it ships separately.
+  {
+    name: "The Rumble — Ain’t No Dying T-Shirt",
+    price: "$30",
+    image: "/images/merch/aint-no-dying-tee.png",
+    shopUrl: "https://store.groundupmusic.net/products/the-rumble-aint-no-dying-t-shirt",
+    note: "Ships separately",
+  },
   { name: "Live at the Maple Leaf (Double Album)", price: "From $50", image: "/images/merch/maple-leaf-double-album.png", shopUrl: `${shopBase}/the-rumble-record` },
   { name: "The Rumble “R” Sticker Set", price: "$9", image: "/images/merch/r-sticker-set.png", shopUrl: `${shopBase}/the-rumble-r-sticker-set` },
   { name: "The Rumble “R” Tee", price: "From $35", image: "/images/merch/r-tee.png", shopUrl: `${shopBase}/the-rumble-r-tee` },

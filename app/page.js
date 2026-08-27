@@ -20,7 +20,6 @@ export default async function HomePage() {
             fill
             priority
             sizes="100vw"
-            style={{ objectFit: "cover" }}
           />
         </div>
         <div className="hero__scrim" />

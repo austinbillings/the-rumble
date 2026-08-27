@@ -43,6 +43,7 @@ export default async function MerchPage() {
                 <div className="product__price">
                   {p.soldOut ? "Sold out" : p.price || "View in shop"}
                 </div>
+                {!p.soldOut && p.note && <div className="product__note">{p.note}</div>}
               </>
             );
             return (

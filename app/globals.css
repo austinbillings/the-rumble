@@ -306,11 +306,27 @@ h3.display { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
    without a stacking context it paints underneath the fixed media + scrim. */
 .afterhero { position: relative; z-index: 2; background: var(--bg); }
 /* On phones, a fixed background is janky, so pin it back to the section.
-   The portrait crop also shows more of the group, so lift it further to keep
-   faces clear of the badge and headline. */
+   A cover crop of the 16:9 band photo also lops off the members at either
+   edge, so contain it against the top instead: the whole width stays visible
+   and the headline sits in the dark space below it. */
 @media (max-width: 880px) {
   .hero__media, .hero__scrim { position: absolute; }
-  .hero__media img { object-position: 50% 8%; }
+  .hero__media img { object-fit: contain; object-position: 50% 0; }
+  /* Collapse the hero to the photo plus the copy beneath it, instead of a
+     full viewport with a void between the two. */
+  .hero { min-height: 0; align-items: flex-start; }
+  .hero__inner { padding-top: calc(56.25vw + 2.5rem); padding-bottom: 3.5rem; }
+  /* 16:9 in a portrait viewport letterboxes, so fade the photo's bottom edge
+     into the page instead of leaving a hard seam. */
+  .hero__scrim {
+    background:
+      linear-gradient(180deg,
+        rgba(10,10,11,0.45) 0%,
+        rgba(10,10,11,0.05) 14%,
+        rgba(10,10,11,0.05) calc(56.25vw - 5rem),
+        var(--bg) calc(56.25vw - 0.5rem)),
+      radial-gradient(120% 50% at 18% 100%, rgba(208,2,27,0.22), transparent 60%);
+  }
 }
 .hero h1 { letter-spacing: 0.005em; }
 .hero h1 span { display: block; }
@@ -545,6 +561,7 @@ a.hero__banner:hover {
 .product:hover .product__img img { transform: scale(1.05); }
 .product__name { font-weight: 600; margin: 0.9rem 0 0.2rem; font-size: 0.98rem; line-height: 1.3; }
 .product__price { color: var(--gold); font-size: 0.9rem; font-weight: 600; }
+.product__note { color: var(--dim, #8a8a90); font-size: 0.78rem; margin-top: 0.25rem; }
 .product--soldout .product__img img { opacity: 0.45; filter: grayscale(0.6); }
 .product--soldout:hover .product__img img { transform: none; }
 .product--soldout .product__price { color: var(--dim, #8a8a90); }

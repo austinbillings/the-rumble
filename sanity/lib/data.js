@@ -44,7 +44,7 @@ export function getVideos() {
 export function getMerch() {
   return fetchOrFallback(
     `*[_type == "merchItem"] | order(order asc) {
-      name, price, shopUrl, soldOut,
+      name, price, shopUrl, soldOut, note,
       "image": image.asset->url
     }`,
     staticMerch
