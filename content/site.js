@@ -55,8 +55,6 @@ export const home = {
     "The Rumble was formed in 2021, and has since been nominated two times for a Grammy. They are a dynamic band dedicated to preserving and evolving New Orleans' rich musical heritage. Fronted by Big Chief Joseph Boudreaux Jr. of the Young Eagles Black Masking Indian tribe, the band seamlessly blends past, present, and future elements of New Orleans culture into their sound. Their songs draw from Mardi Gras Indian funk, brass band traditions, jazz, and hip-hop, creating a vibrant and modern take on iconic styles pioneered by groups like The Meters, Wild Magnolias, and Neville Brothers.",
   body:
     "The Rumble carries forward the vibrant legacy of Mardi Gras Indian funk, a genre pioneered by Big Chief Monk Boudreaux (Joseph's father) and the Wild Magnolias. Led by Grammy-nominated singer and respected Black Masking Indian leader Big Chief Joseph Boudreaux Jr., the band blends the traditional rhythms of black masking culture with modern New Orleans sounds. Trumpeter Aurélien Barnes, a member of the Northside Skull and Bone Gang, represents this iconic carnival tradition, while trombonist José Maize of the TBC Brass Band electrifies audiences at second line parades, embodying New Orleans' brass band heritage. Together, they honor the city's rich musical traditions while pushing its boundaries into the future.",
-  pullQuote:
-    "The Rumble writes and almost exclusively performs original songs, which are true to this day and age, while still carrying the familiar spirit of New Orleans.",
   // Press photos by Nóe Cugny (June 2026 batch).
   // [0] square-ish tile · [1] tall intro split · [2] mosaic tall · [3] mosaic wide · [4] square tile
   galleryImages: [

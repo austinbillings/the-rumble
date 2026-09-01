@@ -39,14 +39,6 @@ export default function BioPage() {
         </div>
       </section>
 
-      <section className="section--tight wrap">
-        <p className="pullquote">
-          {home.pullQuote.split("original songs")[0]}
-          <span className="accent">original songs</span>
-          {home.pullQuote.split("original songs")[1]}
-        </p>
-      </section>
-
       <section className="section wrap">
         <div className="section-head">
           <div>

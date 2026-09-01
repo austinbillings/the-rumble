@@ -122,19 +122,11 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* PULL QUOTE + body */}
+      {/* BODY */}
       <section className="section--tight wrap">
-        <div className="split">
-          <Reveal>
-            <p className="pullquote">
-              Almost everything we play, we{" "}
-              <span className="accent">wrote ourselves</span>.
-            </p>
-          </Reveal>
-          <Reveal delay={120}>
-            <p className="dim" style={{ fontSize: "1.05rem" }}>{home.body}</p>
-          </Reveal>
-        </div>
+        <Reveal>
+          <p className="dim" style={{ fontSize: "1.05rem", maxWidth: "62ch" }}>{home.body}</p>
+        </Reveal>
       </section>
 
       {/* GALLERY MOSAIC */}
