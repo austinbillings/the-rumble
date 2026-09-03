@@ -15,14 +15,15 @@ Stack: **Next.js 15 (App Router) + React 19**, plain-CSS design system, `next/fo
   title) is the aesthetic anchor.
 - **Aesthetic:** dark + blood red, cinematic, Blackletter display type.
 - **Typography (decided):**
-  - `UnifrakturMaguntia` → biggest headings + the navbar wordmark
-  - `Grenze Gotisch` → subheads / higher-legibility headings
+  - `Grenze Gotisch` → all display headings + the navbar wordmark. Replaced
+    `UnifrakturMaguntia` (Sept 2026) — same gothic flavour, far more legible.
+  - `Anton` → still the `--font-display` fallback; used by the mobile menu links
   - `Inter` → body and most of the site (stays sans-serif)
 
 ## Where things live
 
-- **Typography:** `app/layout.js` (next/font imports) + blackletter block at the bottom of
-  `app/globals.css`. CSS vars `--font-blackletter`, `--font-gothic`.
+- **Typography:** `app/layout.js` (next/font imports) + display-type block at the bottom of
+  `app/globals.css`. CSS var `--font-gothic`.
 - **Audio player:** `app/_components/AudioPlayer.js` — exports `AudioProvider`, `useAudio()`,
   `HeaderPlayer`, `ListenButton`. Single `<audio>` instance in the root layout (persists
   across routes), no autoplay. Track list is `tracks` + `featuredTrackId` in

@@ -10,7 +10,7 @@ export const metadata = {
 export default function ShowsPage() {
   return (
     <>
-      <header className="pagehead">
+      <header className="pagehead pagehead--tight">
         <div className="wrap">
           <p className="eyebrow">On Tour</p>
           <h1 className="display">Shows</h1>
@@ -37,7 +37,7 @@ export default function ShowsPage() {
           <h2 className="display">Book The Rumble</h2>
           <p>Bring authentic New Orleans Mardi Gras Indian funk to your stage, festival, or event.</p>
           <a href={`mailto:${contact.booking}`} className="btn btn--gold">
-            {contact.booking}
+            Booking Inquiries
           </a>
         </div>
       </section>
