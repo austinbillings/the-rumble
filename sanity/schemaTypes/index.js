@@ -4,5 +4,6 @@ import release from "./release";
 import video from "./video";
 import member from "./member";
 import merchItem from "./merchItem";
+import subscriber from "./subscriber";
 
-export const schemaTypes = [siteSettings, album, release, video, member, merchItem];
+export const schemaTypes = [siteSettings, album, release, video, member, merchItem, subscriber];

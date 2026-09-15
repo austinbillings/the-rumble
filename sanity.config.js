@@ -12,4 +12,8 @@ export default defineConfig({
   dataset,
   plugins: [structureTool(), visionTool({ defaultApiVersion: apiVersion })],
   schema: { types: schemaTypes },
+  // Signups only ever come from the site, never "New document" in the Studio.
+  document: {
+    newDocumentOptions: (prev) => prev.filter((item) => item.templateId !== "subscriber"),
+  },
 });

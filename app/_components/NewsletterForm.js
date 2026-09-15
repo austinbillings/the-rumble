@@ -5,6 +5,7 @@ import { useState } from "react";
 export default function NewsletterForm() {
   const [status, setStatus] = useState("idle"); // idle | loading | done | error
   const [email, setEmail] = useState("");
+  const [company, setCompany] = useState(""); // honeypot, see below
   const [error, setError] = useState("");
 
   async function onSubmit(e) {
@@ -16,7 +17,7 @@ export default function NewsletterForm() {
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, company }),
       });
       const data = await res.json().catch(() => ({}));
       if (res.ok) {
@@ -51,6 +52,20 @@ export default function NewsletterForm() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           disabled={status === "loading"}
+        />
+      </div>
+      {/* Honeypot: off-screen and skipped by keyboard/screen readers, so only
+          bots that auto-fill every input will ever put a value here. */}
+      <div aria-hidden="true" style={{ position: "absolute", left: "-10000px", width: 1, height: 1, overflow: "hidden" }}>
+        <label htmlFor="nl-company">Company</label>
+        <input
+          id="nl-company"
+          type="text"
+          name="company"
+          tabIndex={-1}
+          autoComplete="off"
+          value={company}
+          onChange={(e) => setCompany(e.target.value)}
         />
       </div>
       <button type="submit" className="btn btn--primary" disabled={status === "loading"}>

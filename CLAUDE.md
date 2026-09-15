@@ -34,8 +34,12 @@ Stack: **Next.js 15 (App Router) + React 19**, plain-CSS design system, `next/fo
 - **Video page:** `app/media/page.js` renders `videos` from `content/site.js` (fields: `id`,
   `title`, `context`, `category` = `performance` | `feature`). `VideoCard` is click-to-play
   YouTube embed.
-- **Newsletter (Buttondown):** `app/api/subscribe/route.js` (server-side; reads
-  `BUTTONDOWN_API_KEY`) + `app/_components/NewsletterForm.js` posts to it. Used on `/contact`.
+- **Mailing list:** `app/_components/NewsletterForm.js` (on `/contact`) posts to
+  `app/api/subscribe/route.js`, which saves each signup to Sanity as a `subscriber` doc via
+  `sanity/lib/writeClient.js` (needs `SANITY_API_WRITE_TOKEN`), and also forwards to
+  Buttondown if `BUTTONDOWN_API_KEY` is set. Subscriber `_id`s are `subscriber.<sha256(email)>`
+  — the dot keeps them out of public dataset queries; **don't change that ID shape.**
+  Form has a `company` honeypot field.
 - **CMS (Sanity):** embedded Studio at `/studio` (`app/studio/[[...tool]]/page.jsx`),
   `sanity.config.js`, and `sanity/` (`env.js`, `lib/client.js`, `lib/image.js`,
   `schemaTypes/*`). Schemas: siteSettings, album, release, video, member, merchItem.
@@ -54,7 +58,8 @@ npm install sanity next-sanity @sanity/vision @sanity/image-url @portabletext/re
 NEXT_PUBLIC_SANITY_PROJECT_ID=...      # create a free project at sanity.io/manage
 NEXT_PUBLIC_SANITY_DATASET=production
 NEXT_PUBLIC_SANITY_API_VERSION=2024-10-01
-BUTTONDOWN_API_KEY=...                  # buttondown.email/settings/api  (server-only)
+SANITY_API_WRITE_TOKEN=...              # Editor token, server-only — mailing-list signups
+BUTTONDOWN_API_KEY=...                  # optional; buttondown.email/settings/api (server-only)
 ```
 
 Also add `localhost:3000` + the production domain to Sanity project **CORS origins**.
