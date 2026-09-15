@@ -51,8 +51,8 @@ export default function SiteHeader() {
             <ListenButton className="btn btn--primary nav__cta" />
           </nav>
 
-          <Link href="/contact#newsletter" className="pill">
-            Newsletter
+          <Link href="/contact#mailing-list" className="navpill">
+            <span className="navpill__join">Join&nbsp;</span>Mailing List
           </Link>
 
           <HeaderPlayer />

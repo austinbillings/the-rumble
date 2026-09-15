@@ -24,8 +24,8 @@ export default function ContactPage() {
 
       <section className="section wrap">
         <div className="contact-grid">
-          <div id="newsletter" style={{ scrollMarginTop: "6rem" }}>
-            <h2 className="display" style={{ fontSize: "clamp(1.6rem,4vw,2.4rem)" }}>Join the Mailing List</h2>
+          <div id="mailing-list" style={{ scrollMarginTop: "6rem" }}>
+            <h2 className="display" style={{ fontSize: "clamp(1.6rem,4vw,2.4rem)" }}>Join our email list</h2>
             <p className="dim" style={{ marginBottom: "1.8rem" }}>{contact.newsletterBlurb}</p>
             <NewsletterForm />
           </div>

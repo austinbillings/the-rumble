@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-// Buttondown newsletter subscribe endpoint.
+// Buttondown mailing-list subscribe endpoint.
 // Set BUTTONDOWN_API_KEY in .env.local (server-only; do NOT prefix with NEXT_PUBLIC).
 export async function POST(request) {
   let email;
@@ -20,7 +20,7 @@ export async function POST(request) {
   const key = process.env.BUTTONDOWN_API_KEY;
   if (!key) {
     return NextResponse.json(
-      { error: "Newsletter is not configured yet." },
+      { error: "The mailing list is not configured yet." },
       { status: 500 }
     );
   }

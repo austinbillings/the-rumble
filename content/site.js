@@ -30,7 +30,7 @@ export const social = {
 
 export const contact = {
   newsletterBlurb:
-    "Join our e-mail list for updates, tour announcements, new music, and more exclusive content!",
+    "Join our mailing list for updates, tour announcements, new music, and more exclusive content!",
   booking: "Eric.Gerber@royalartistgroup.com",
   general: "therumblenola@gmail.com",
 };

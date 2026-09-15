@@ -1,4 +1,4 @@
-import { Anton, Inter, Grenze_Gotisch } from "next/font/google";
+import { Anton, Inter, UnifrakturMaguntia, Grenze_Gotisch } from "next/font/google";
 import "./globals.css";
 import SiteHeader from "./_components/SiteHeader";
 import SiteFooter from "./_components/SiteFooter";
@@ -14,6 +14,13 @@ const anton = Anton({
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+const unifraktur = UnifrakturMaguntia({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-unifraktur",
   display: "swap",
 });
 
@@ -47,7 +54,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${anton.variable} ${inter.variable} ${grenzeGotisch.variable}`}>
+    <html lang="en" className={`${anton.variable} ${inter.variable} ${unifraktur.variable} ${grenzeGotisch.variable}`}>
       <body>
         <AudioProvider>
           <SiteHeader />

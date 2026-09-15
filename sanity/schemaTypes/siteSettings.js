@@ -12,7 +12,7 @@ export default {
     { name: "instagram", title: "Instagram URL", type: "url" },
     { name: "facebook", title: "Facebook URL", type: "url" },
     { name: "youtube", title: "YouTube URL", type: "url" },
-    { name: "newsletterBlurb", title: "Newsletter Blurb", type: "text" },
+    { name: "newsletterBlurb", title: "Mailing List Blurb", type: "text" },
   ],
   preview: { prepare: () => ({ title: "Site Settings" }) },
 };

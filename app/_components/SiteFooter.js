@@ -45,7 +45,7 @@ export default function SiteFooter() {
           <div className="ftr__links">
             <a href={`mailto:${contact.booking}`}>{contact.booking}</a>
             <a href={`mailto:${contact.general}`}>{contact.general}</a>
-            <Link href="/contact">Join the mailing list</Link>
+            <Link href="/contact#mailing-list">Join Mailing List</Link>
           </div>
         </div>
       </div>

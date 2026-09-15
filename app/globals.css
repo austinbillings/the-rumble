@@ -207,8 +207,9 @@ h3.display { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
 }
 .nav__cta { margin-left: 0.4rem; }
 
-/* Mini pill link, navbar newsletter CTA */
-.pill {
+/* Mini pill link, navbar mailing-list CTA.
+   NB: `.pill` is already taken by the hero banner's "New" badge, hence navpill. */
+.navpill {
   display: inline-flex;
   align-items: center;
   flex: none;
@@ -226,7 +227,7 @@ h3.display { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
   background: transparent;
   transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
 }
-.pill:hover { background: var(--gold); border-color: var(--gold); color: #1a1205; }
+.navpill:hover { background: var(--gold); border-color: var(--gold); color: #1a1205; }
 
 .burger {
   display: none;
@@ -270,8 +271,10 @@ h3.display { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
   .brand { margin-right: auto; }
 }
 @media (max-width: 420px) {
-  .brand { font-size: 1.35rem; }
-  .pill { font-size: 0.62rem; letter-spacing: 0.08em; padding: 0.45rem 0.7rem; }
+  .brand { font-size: 1.3rem; }
+  .navpill { font-size: 0.62rem; letter-spacing: 0.08em; padding: 0.45rem 0.7rem; }
+  /* "Join Mailing List" crowds the wordmark on phones; drop the verb. */
+  .navpill__join { display: none; }
 }
 
 /* ---------- Footer ---------- */
@@ -639,13 +642,18 @@ a.hero__banner:hover {
 
 /* ============================================================
    Display typography, album-era refresh (July 2026)
-   Grenze Gotisch = all display headings + navbar wordmark
-   (replaced UnifrakturMaguntia, Sept 2026: same gothic flavour,
-   far more legible at heading sizes.)
+
+   Grenze Gotisch (--font-gothic) = every display heading sitewide.
+     Replaced UnifrakturMaguntia (Sept 2026): same gothic flavour,
+     far more legible at heading sizes.
+   UnifrakturMaguntia (--font-blackletter) = kept for exactly two
+     places, the two that read as the logo: the navbar wordmark and
+     the homepage hero title. Don't spread it past those.
    Body stays Inter (sans).
    ============================================================ */
 :root {
   --font-gothic: var(--font-grenze), "Grenze Gotisch", serif;
+  --font-blackletter: var(--font-unifraktur), "UnifrakturMaguntia", serif;
 }
 h1.display {
   font-family: var(--font-gothic);
@@ -663,14 +671,24 @@ h3.display {
   letter-spacing: -0.01em;
 }
 h2.display { line-height: 1.04; }
+
+/* --- the two blackletter holdouts --- */
 .brand {
-  font-family: var(--font-gothic);
-  font-weight: 700;
+  font-family: var(--font-blackletter);
+  font-weight: 400;
   text-transform: none;
-  letter-spacing: 0.01em;
-  font-size: 1.7rem;
+  letter-spacing: 0;
+  font-size: 1.5rem;
 }
-.brand b { font-weight: 700; }
+.brand b { font-weight: 400; }
+/* Homepage hero only. `.sub` underneath it is pinned to Inter further up. */
+.hero h1.display {
+  font-family: var(--font-blackletter);
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  font-size: clamp(2.6rem, 9.5vw, 7rem);
+}
 
 
 /* ---------- Header mini audio player ---------- */
