@@ -12,13 +12,13 @@ export const band = {
 };
 
 export const nav = [
-  { label: "Bio", href: "/bio" },
   // hideInNav: page stays live (and linked in the footer), just not in the navbar
   { label: "The Suit", href: "/suit", hideInNav: true },
   { label: "Shows", href: "/shows" },
   { label: "Media", href: "/media" },
   { label: "Music", href: "/music" },
   { label: "Merch", href: "/merch" },
+  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -30,13 +30,16 @@ export const social = {
 
 export const contact = {
   newsletterBlurb:
-    "Join our mailing list for updates, tour announcements, new music, and more exclusive content!",
+    "",
   booking: "Eric.Gerber@royalartistgroup.com",
   general: "therumblenola@gmail.com",
 };
 
 // Bandsintown widget artist id from the original /shows page.
 export const bandsintownArtistId = "id_15516447";
+// app_id for the public Bandsintown REST API (the homepage tour blade).
+// The `js_` prefix is what the official widget sends; plain domains are rejected.
+export const bandsintownAppId = "js_therumbleband.com";
 
 // Smart links, used by the hero banner, the homepage album blade, and the Music page.
 export const albumListenUrl = "https://found.ee/aintnodying";
@@ -48,7 +51,7 @@ export const singleListenUrl = "https://found.ee/secondline";
 export const home = {
   heroTitle: "The Rumble",
   heroSubtitle: "Ft. Big Chief Joseph Boudreaux Jr.",
-  heroBanner: "Ain't No Dying — the new album — out now",
+  heroBanner: "Ain't No Dying — new album out now",
   heroBannerHref: albumListenUrl,
   heroImage: "/images/band/noe-studio-green.jpg",
   intro:
@@ -72,16 +75,13 @@ export const home = {
 // art vs "Ain't No Dyin'" in a press listing) — the release itself now settles it.
 // ---------------------------------------------------------------------------
 export const featuredAlbum = {
-  eyebrow: "The New Album",
   title: "Ain't No Dying",
   cover: "/images/album/aint-no-dying.jpg",
   coverAlt:
     "Ain't No Dying album cover: Big Chief Joseph Boudreaux Jr. and a Northside Skull and Bone Gang member in a New Orleans cemetery, with a single red feather",
-  blurb:
-    "The Rumble's new album is here. Ain't No Dying — featuring “Second Line For Me” — is out now on every streaming platform.",
   note: "Out now",
   primaryCta: { label: "Listen Now", href: albumListenUrl },
-  secondaryCta: { label: "Catch Us Live", href: "/shows" },
+  secondaryCta: { label: "Tour Dates", href: "/shows" },
 };
 
 // ---------------------------------------------------------------------------
@@ -93,14 +93,15 @@ export const bio = {
   accolades:
     "The ensemble has received two GRAMMY nominations for Best Regional Roots Album for their albums Live at the Maple Leaf and Stories From The Battlefield.",
   image: "/images/band/noe-studio-laughs.jpg",
+  // Roles are deliberately short: the lineup list is one line per member.
   members: [
-    { name: "Big Chief Joseph Boudreaux Jr.", role: "Vocals; Frontman, Young Eagles Black Masking Indian tribe" },
-    { name: "Aurélien Barnes", role: "Trumpet & Percussion; Northside Skull and Bone Gang" },
-    { name: "José Maize Jr.", role: "Trombone; TBC Brass Band" },
-    { name: "TJ Norris", role: "Bass" },
-    { name: "Ari Teitel", role: "Guitar" },
-    { name: "Andriu Yanovski", role: "Keys" },
-    { name: "Trenton O'Neal", role: "Drums" },
+    { name: "Big Chief Joseph Boudreaux Jr.", role: "Vocals" },
+    { name: "Aurélien Barnes", role: "Trumpet, Percussion, Vocals" },
+    { name: "José Maize Jr.", role: "Trombone, Vocals" },
+    { name: "TJ Norris", role: "Bass, Vocals" },
+    { name: "Ari Teitel", role: "Guitar, Vocals" },
+    { name: "Andriu Yanovski", role: "Keys, Vocals" },
+    { name: "Trenton O'Neal", role: "Drums, Vocals" },
   ],
 };
 
@@ -153,9 +154,9 @@ export const suit = {
   donate: {
     title: "Donate to the Suit-Making Process",
     blurb:
-      "You can make a difference! Be an important part of Big Chief Joseph Boudreaux Jr. and The Young Eagles tribe continuing a 150-year-old tradition. Every year Big Chief Joseph Boudreaux Jr. painstakingly designs and builds his suit to carry on the tradition, bead by bead and feather by feather.",
+      "Big Chief Joseph Boudreaux Jr. designs and builds a new suit every year for the Young Eagles, bead by bead and feather by feather. Contributions go toward the materials and the work.",
     statsIntro:
-      "To better understand the physical labor and monetary commitment that goes into a single suit, you should know…",
+      "What goes into a single suit:",
     stats: [
       { value: "$10,000", label: "in supplies alone for a single suit" },
       { value: "7,000", label: "hours of labor from design to completion" },
@@ -169,13 +170,16 @@ export const suit = {
 // ---------------------------------------------------------------------------
 // MUSIC
 // ---------------------------------------------------------------------------
+// `cover` is a square (1:1) sleeve image; releases without one fall back to a
+// typographic tile in <ReleaseGrid>.
 export const releases = [
   {
     title: "Ain't No Dying",
     year: "2026",
-    note: "The new album · Out now on all platforms",
+    note: "New album · Out now on all platforms",
     listenUrl: albumListenUrl,
     tag: "New Album · Out Now",
+    cover: "/images/album/aint-no-dying.jpg",
   },
   {
     title: "Second Line For Me",
@@ -183,6 +187,7 @@ export const releases = [
     note: "Lead single from Ain't No Dying",
     listenUrl: singleListenUrl,
     tag: "Single",
+    cover: "/images/album/second-line-for-me.jpg",
   },
   {
     title: "Stories from the Battlefield",
@@ -190,6 +195,7 @@ export const releases = [
     note: "Grammy-nominated · Available on all platforms",
     listenUrl: "https://link.wellkeptsecret.co/therumble",
     featured: true,
+    cover: "/images/album/stories-from-the-battlefield.jpg",
   },
   {
     title: "Live at the Maple Leaf Bar",
@@ -198,6 +204,7 @@ export const releases = [
     listenUrl:
       "https://distrokid.com/hyperfollow/therumblechiefjosephboudreauxjr/the-rumble-ft-chief-joseph-boudreaux-jr-live-at-the-maple-leaf-bar",
     featured: true,
+    cover: "/images/album/maple-leaf.jpg",
   },
 ];
 

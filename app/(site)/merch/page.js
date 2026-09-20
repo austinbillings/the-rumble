@@ -1,30 +1,24 @@
 import Image from "next/image";
-import Reveal from "../_components/Reveal";
+import Reveal from "../../_components/Reveal";
 import { merchShopUrl } from "@/content/site";
 import { getMerch } from "@/sanity/lib/data";
+import MailingListBlade from "../../_components/MailingListBlade";
 
 export const revalidate = 60;
 
 export const metadata = {
   title: "Merch",
-  description: "Official The Rumble merch; tees, muscle tanks, and sticker sets.",
+  description: "The Rumble merch — tees, tanks, stickers, and records.",
 };
 
 export default async function MerchPage() {
   const merch = await getMerch();
   return (
     <>
-      <header className="pagehead">
-        <div className="wrap">
-          <p className="eyebrow">Official Store</p>
-          <h1 className="display">Merch</h1>
-          <p className="lead dim">
-            Official tees, tanks, and stickers from the band.
-          </p>
-        </div>
-      </header>
-
-      <section className="section wrap">
+      <section className="section section--pagetop wrap">
+        <h1 className="display display--sub" style={{ marginBottom: "clamp(2rem, 4vw, 3rem)" }}>
+          Merch
+        </h1>
         <div className="merchgrid">
           {merch.map((p, i) => {
             const card = (
@@ -66,15 +60,16 @@ export default async function MerchPage() {
         </div>
       </section>
 
-      <section className="section--tight wrap" style={{ paddingBottom: "6rem" }}>
+      <section className="section--tight wrap">
         <div className="cta-band">
-          <h2 className="display">Visit the Full Shop</h2>
-          <p>Browse all sizes, colors, and bundles in the official store.</p>
+          <h2 className="display">Full Shop</h2>
+          <p>All sizes, colors, and bundles.</p>
           <a href={merchShopUrl} target="_blank" rel="noreferrer" className="btn btn--gold">
             Shop Now
           </a>
         </div>
       </section>
+      <MailingListBlade />
     </>
   );
 }

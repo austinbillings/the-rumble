@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 
-export default function NewsletterForm() {
+export default function NewsletterForm({ compact = false }) {
   const [status, setStatus] = useState("idle"); // idle | loading | done | error
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState(""); // honeypot, see below
   const [error, setError] = useState("");
+  // The blade renders on pages that may already have the full form, so ids must differ.
+  const idPrefix = compact ? "nl-c" : "nl";
 
   async function onSubmit(e) {
     e.preventDefault();
@@ -33,19 +35,15 @@ export default function NewsletterForm() {
   }
 
   if (status === "done") {
-    return (
-      <p className="form-success">
-        Thanks, you're on the list. We'll be in touch with tour dates and new music.
-      </p>
-    );
+    return <p className="form-success">You&rsquo;re on the list. Thanks.</p>;
   }
 
   return (
-    <form onSubmit={onSubmit} noValidate>
+    <form onSubmit={onSubmit} noValidate className={compact ? "nlform nlform--compact" : "nlform"}>
       <div className="field">
-        <label htmlFor="nl-email">Email address</label>
+        <label htmlFor={`${idPrefix}-email`}>Email address</label>
         <input
-          id="nl-email"
+          id={`${idPrefix}-email`}
           type="email"
           required
           placeholder="you@example.com"
@@ -57,9 +55,9 @@ export default function NewsletterForm() {
       {/* Honeypot: off-screen and skipped by keyboard/screen readers, so only
           bots that auto-fill every input will ever put a value here. */}
       <div aria-hidden="true" style={{ position: "absolute", left: "-10000px", width: 1, height: 1, overflow: "hidden" }}>
-        <label htmlFor="nl-company">Company</label>
+        <label htmlFor={`${idPrefix}-company`}>Company</label>
         <input
-          id="nl-company"
+          id={`${idPrefix}-company`}
           type="text"
           name="company"
           tabIndex={-1}
@@ -74,9 +72,11 @@ export default function NewsletterForm() {
       {status === "error" && (
         <p className="form-note" style={{ color: "var(--crimson-bright)" }}>{error}</p>
       )}
-      <p className="form-note">
-        We respect your inbox. Updates, tour announcements, and new music only.
-      </p>
+      {!compact && (
+        <p className="form-note">
+          Tour dates, new music, and announcements. Unsubscribe anytime.
+        </p>
+      )}
     </form>
   );
 }

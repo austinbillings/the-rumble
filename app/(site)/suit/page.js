@@ -1,11 +1,12 @@
 import Image from "next/image";
-import Reveal from "../_components/Reveal";
+import Reveal from "../../_components/Reveal";
 import { suit, contact } from "@/content/site";
+import MailingListBlade from "../../_components/MailingListBlade";
 
 export const metadata = {
   title: "The Suit",
   description:
-    "The sacred Black Masking Indian suit of Big Chief Joseph Boudreaux Jr., handmade from scratch each year, bead by bead and feather by feather.",
+    "The Black Masking Indian suit of Big Chief Joseph Boudreaux Jr. — how it's made, what it means, and how to support it.",
 };
 
 export default function SuitPage() {
@@ -14,11 +15,10 @@ export default function SuitPage() {
     <>
       <header className="pagehead">
         <div className="wrap">
-          <p className="eyebrow">Black Masking Indian Tradition</p>
           <h1 className="display">{suit.heading}</h1>
           <p className="lead dim">
-            Every year, Big Chief Joseph Boudreaux Jr. builds a brand-new suit by
-            hand, hundreds of thousands of beads, every one part of the story.
+            Every year Big Chief Joseph Boudreaux Jr. builds a new suit by hand,
+            bead by bead
           </p>
         </div>
       </header>
@@ -65,7 +65,6 @@ export default function SuitPage() {
 
       {/* Stats */}
       <section className="section--tight wrap">
-        <p className="eyebrow">By the numbers</p>
         <div className="suit-stats">
           {donate.stats.map((st) => (
             <div className="suit-stat" key={st.label}>
@@ -93,6 +92,7 @@ export default function SuitPage() {
           </a>
         </Reveal>
       </section>
+      <MailingListBlade />
     </>
   );
 }

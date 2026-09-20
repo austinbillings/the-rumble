@@ -31,9 +31,16 @@ Stack: **Next.js 15 (App Router) + React 19**, plain-CSS design system, `next/fo
   across routes), no autoplay. Track list is `tracks` + `featuredTrackId` in
   `content/site.js`. **`src` fields are empty — needs real hosted audio.** Any element can
   start playback via `useAudio().play(track)`.
-- **Video page:** `app/media/page.js` renders `videos` from `content/site.js` (fields: `id`,
-  `title`, `context`, `category` = `performance` | `feature`). `VideoCard` is click-to-play
-  YouTube embed.
+- **Video page:** `app/(site)/media/page.js` renders `videos` from `content/site.js` (fields:
+  `id`, `title`, `context`, `category` = `performance` | `feature`). `VideoCard` is
+  click-to-play YouTube embed.
+- **Releases:** `app/_components/ReleaseGrid.js` renders the discography as square
+  album-cover tiles (homepage "Latest Releases" + `/music`, which passes `showTags`).
+  A release without a `cover` falls back to a typographic sleeve.
+- **Tour dates:** `/shows` uses the official Bandsintown embed
+  (`app/_components/BandsintownWidget.js`). The homepage tour blade instead fetches the
+  next few dates server-side via `lib/bandsintown.js` (public REST API v3.1, `app_id` must
+  carry the `js_` prefix) and falls back to a plain "View Tour Dates" band on any error.
 - **Mailing list:** `app/_components/NewsletterForm.js` (on `/contact`) posts to
   `app/api/subscribe/route.js`, which saves each signup to Sanity as a `subscriber` doc via
   `sanity/lib/writeClient.js` (needs `SANITY_API_WRITE_TOKEN`), and also forwards to
@@ -69,7 +76,8 @@ Full notes in `SANITY_SETUP.md`.
 
 1. **Images** — pull from the shared Google Drive "Photos" folder once available;
    resize/optimize into `public/images/`; wire the album cover as hero + refresh the
-   gallery. Grab the hi-res "Ain't No Dying" cover.
+   gallery. Grab the hi-res "Ain't No Dying" cover. (All four release sleeves are now
+   in `public/images/album/`, so no release uses the `ReleaseGrid` fallback tile.)
 2. **Sanity content migration** — after the project exists: fetch in pages via
    `sanity/lib/client.js`, then retire the static data in `content/site.js`.
 3. **Shopify store** — need the store domain + a **Storefront API token**; build the

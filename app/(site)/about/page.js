@@ -1,21 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
-import Reveal from "../_components/Reveal";
+import Reveal from "../../_components/Reveal";
 import { bio, home } from "@/content/site";
+import MailingListBlade from "../../_components/MailingListBlade";
 
 export const metadata = {
-  title: "Bio",
+  title: "About",
   description: bio.lead,
 };
 
 export default function BioPage() {
   return (
     <>
-      <header className="pagehead">
+      <header className="pagehead pagehead--tight">
         <div className="wrap">
-          <p className="eyebrow">The Story</p>
           <h1 className="display">{bio.heading}</h1>
-          <p className="lead dim">{bio.lead}</p>
+          <p className="dim">{bio.lead}</p>
         </div>
       </header>
 
@@ -23,7 +23,7 @@ export default function BioPage() {
         <div className="split">
           <Reveal className="split--text">
             <span className="tag">Grammy Nominated</span>
-            <p className="lead" style={{ marginTop: "1.4rem" }}>{home.intro}</p>
+            <p className="dim">{home.intro}</p>
             <p className="dim">{home.body}</p>
             <p className="dim">{bio.accolades}</p>
           </Reveal>
@@ -39,33 +39,29 @@ export default function BioPage() {
         </div>
       </section>
 
-      <section className="section wrap">
-        <div className="section-head">
-          <div>
-            <p className="eyebrow">The Ensemble</p>
-            <h2 className="display">The Band</h2>
-          </div>
-        </div>
-        <div className="members">
+      <section className="section wrap lineup">
+        <h2 className="display lineup__title">The Band</h2>
+        <ul className="members">
           {bio.members.map((m) => (
-            <div className="member" key={m.name}>
+            <li className="member" key={m.name}>
               <span className="member__name">{m.name}</span>
               <span className="member__role">{m.role}</span>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
 
-      <section className="section--tight wrap" style={{ paddingBottom: "6rem" }}>
+      <section className="section--tight wrap">
         <Reveal className="cta-band">
-          <h2 className="display">Hear It For Yourself</h2>
-          <p>Stream both Grammy-nominated albums and watch The Rumble live.</p>
+          <h2 className="display">Music &amp; Video</h2>
+          <p>Stream the albums and watch live performances.</p>
           <div style={{ display: "flex", gap: "0.8rem", justifyContent: "center", flexWrap: "wrap" }}>
             <Link href="/music" className="btn btn--gold">Listen</Link>
             <Link href="/media" className="btn btn--ghost" style={{ borderColor: "rgba(255,255,255,0.5)", color: "#fff" }}>Watch</Link>
           </div>
         </Reveal>
       </section>
+      <MailingListBlade />
     </>
   );
 }

@@ -1,8 +1,5 @@
 import { Anton, Inter, UnifrakturMaguntia, Grenze_Gotisch } from "next/font/google";
 import "./globals.css";
-import SiteHeader from "./_components/SiteHeader";
-import SiteFooter from "./_components/SiteFooter";
-import { AudioProvider } from "./_components/AudioPlayer";
 
 const anton = Anton({
   weight: "400",
@@ -42,7 +39,7 @@ export const metadata = {
   openGraph: {
     title: "The Rumble, Ft. Big Chief Joseph Boudreaux Jr.",
     description:
-      "Grammy-nominated New Orleans Mardi Gras Indian funk. The new album Ain't No Dying is out now.",
+      "Grammy-nominated New Orleans Mardi Gras Indian funk. New album Ain't No Dying out now.",
     type: "website",
     images: ["/images/band/noe-studio-green.jpg"],
   },
@@ -55,13 +52,7 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${anton.variable} ${inter.variable} ${unifraktur.variable} ${grenzeGotisch.variable}`}>
-      <body>
-        <AudioProvider>
-          <SiteHeader />
-          <main>{children}</main>
-          <SiteFooter />
-        </AudioProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

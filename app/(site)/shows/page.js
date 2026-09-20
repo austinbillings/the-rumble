@@ -1,10 +1,11 @@
-import BandsintownWidget from "../_components/BandsintownWidget";
+import BandsintownWidget from "../../_components/BandsintownWidget";
 import { contact, social } from "@/content/site";
+import MailingListBlade from "../../_components/MailingListBlade";
 
 export const metadata = {
   title: "Shows",
   description:
-    "Upcoming tour dates and tickets for The Rumble. Catch the Grammy-nominated New Orleans band live.",
+    "Upcoming tour dates and tickets for The Rumble.",
 };
 
 export default function ShowsPage() {
@@ -12,11 +13,8 @@ export default function ShowsPage() {
     <>
       <header className="pagehead pagehead--tight">
         <div className="wrap">
-          <p className="eyebrow">On Tour</p>
-          <h1 className="display">Shows</h1>
-          <p className="lead dim">
-            Upcoming dates, cities, and tickets below.
-          </p>
+          <h1 className="display display--sub">Shows</h1>
+          <p className="dim">Upcoming dates, cities, and tickets</p>
         </div>
       </header>
 
@@ -32,15 +30,16 @@ export default function ShowsPage() {
         </noscript>
       </section>
 
-      <section className="section--tight wrap" style={{ paddingBottom: "6rem" }}>
+      <section className="section--tight wrap">
         <div className="cta-band">
-          <h2 className="display">Book The Rumble</h2>
-          <p>Bring authentic New Orleans Mardi Gras Indian funk to your stage, festival, or event.</p>
+          <h2 className="display">Booking</h2>
+          <p>For festivals, venues, and private events.</p>
           <a href={`mailto:${contact.booking}`} className="btn btn--gold">
             Booking Inquiries
           </a>
         </div>
       </section>
+      <MailingListBlade />
     </>
   );
 }

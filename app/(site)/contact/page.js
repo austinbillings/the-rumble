@@ -1,12 +1,12 @@
 import Link from "next/link";
-import NewsletterForm from "../_components/NewsletterForm";
-import { IconInstagram, IconFacebook, IconYouTube } from "../_components/icons";
+import NewsletterForm from "../../_components/NewsletterForm";
+import { IconInstagram, IconFacebook, IconYouTube } from "../../_components/icons";
 import { contact, social } from "@/content/site";
 
 export const metadata = {
   title: "Contact",
   description:
-    "Get in touch with The Rumble, booking inquiries, general contact, and the mailing list.",
+    "Booking, general inquiries, and the mailing list for The Rumble.",
 };
 
 export default function ContactPage() {
@@ -14,10 +14,9 @@ export default function ContactPage() {
     <>
       <header className="pagehead">
         <div className="wrap">
-          <p className="eyebrow">Get In Touch</p>
           <h1 className="display">Contact</h1>
           <p className="lead dim">
-            Booking, press, or just to say hey. Here's how to reach us.
+            Booking, press, and general inquiries
           </p>
         </div>
       </header>
@@ -25,7 +24,7 @@ export default function ContactPage() {
       <section className="section wrap">
         <div className="contact-grid">
           <div id="mailing-list" style={{ scrollMarginTop: "6rem" }}>
-            <h2 className="display" style={{ fontSize: "clamp(1.6rem,4vw,2.4rem)" }}>Join our email list</h2>
+            <h2 className="display" style={{ fontSize: "clamp(1.6rem,4vw,2.4rem)" }}>Join our mailing list</h2>
             <p className="dim" style={{ marginBottom: "1.8rem" }}>{contact.newsletterBlurb}</p>
             <NewsletterForm />
           </div>
@@ -65,9 +64,9 @@ export default function ContactPage() {
 
       <section className="section--tight wrap" style={{ paddingBottom: "6rem" }}>
         <div className="cta-band">
-          <h2 className="display">Support the Tradition</h2>
-          <p>Help Big Chief Joseph Boudreaux Jr. continue a 150-year-old Black Masking Indian tradition, bead by bead.</p>
-          <Link href="/suit" className="btn btn--gold">Learn About the Suit</Link>
+          <h2 className="display">The Suit</h2>
+          <p>How Big Chief Joseph Boudreaux Jr.'s Black Masking Indian suit is made, and how to support it.</p>
+          <Link href="/suit" className="btn btn--gold">About the Suit</Link>
         </div>
       </section>
     </>
