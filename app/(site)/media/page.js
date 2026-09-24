@@ -1,6 +1,5 @@
 import VideoCard from "../../_components/VideoCard";
-import { social } from "@/content/site";
-import { getVideos } from "@/sanity/lib/data";
+import { getSiteSettings, getVideos } from "@/sanity/lib/data";
 import MailingListBlade from "../../_components/MailingListBlade";
 
 export const revalidate = 60;
@@ -12,7 +11,7 @@ export const metadata = {
 };
 
 export default async function MediaPage() {
-  const videos = await getVideos();
+  const [videos, { social }] = await Promise.all([getVideos(), getSiteSettings()]);
   const performances = videos.filter((v) => v.category !== "feature");
   const features = videos.filter((v) => v.category === "feature");
 

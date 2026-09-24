@@ -6,7 +6,7 @@ import Reveal from "./Reveal";
  * ("Latest Releases") and on /music.
  *
  * Releases without a `cover` fall back to a typographic sleeve so the grid
- * stays even until the real art lands — see the TODO in content/site.js.
+ * stays even until the real art lands.
  *
  * `showTags` surfaces the "Grammy Nominated" / "New Album" badge; /music does,
  * the homepage doesn't.

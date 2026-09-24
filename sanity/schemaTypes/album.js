@@ -6,12 +6,15 @@ export default {
     { name: "title", title: "Title", type: "string", validation: (r) => r.required() },
     { name: "releaseDate", title: "Release Date", type: "date" },
     { name: "cover", title: "Cover Art", type: "image", options: { hotspot: true } },
+    { name: "coverAlt", title: "Cover Alt Text", type: "string", description: "Describes the cover for screen readers." },
     { name: "featured", title: "Feature on homepage", type: "boolean", initialValue: false },
     { name: "listenUrl", title: "Listen / Pre-save URL", type: "url" },
-    { name: "blurb", title: "Short Description", type: "text" },
+    { name: "listenLabel", title: "Listen Button Label", type: "string", initialValue: "Listen Now" },
+    { name: "blurb", title: "Short Description", type: "text", description: "Shown under the title on the homepage, e.g. \"Out now\"." },
     {
       name: "tracks",
       title: "Tracks",
+      description: "The first track with audio plays from the header's Listen button (featured album only).",
       type: "array",
       of: [
         {

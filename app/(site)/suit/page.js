@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Reveal from "../../_components/Reveal";
-import { suit, contact } from "@/content/site";
+import { getSuitPage, getSiteSettings } from "@/sanity/lib/data";
 import MailingListBlade from "../../_components/MailingListBlade";
 
 export const metadata = {
@@ -9,7 +9,10 @@ export const metadata = {
     "The Black Masking Indian suit of Big Chief Joseph Boudreaux Jr. — how it's made, what it means, and how to support it.",
 };
 
-export default function SuitPage() {
+export const revalidate = 60;
+
+export default async function SuitPage() {
+  const [suit, { contact }] = await Promise.all([getSuitPage(), getSiteSettings()]);
   const { donate } = suit;
   return (
     <>
@@ -44,10 +47,10 @@ export default function SuitPage() {
           {suit.sections.map((s, i) => (
             <Reveal key={s.title} className="suit-section" delay={i * 40}>
               <h2 className="display" style={{ fontSize: "clamp(1.6rem,4vw,2.6rem)" }}>{s.title}</h2>
-              {s.paragraphs.map((p, j) => (
+              {s.paragraphs?.map((p, j) => (
                 <p key={j} className="dim" style={{ fontSize: "1.05rem" }}>{p}</p>
               ))}
-              {s.roles && (
+              {s.roles?.length > 0 && (
                 <ul className="roles">
                   {s.roles.map((r) => (
                     <li key={r.name}>

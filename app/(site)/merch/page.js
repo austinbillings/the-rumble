@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Reveal from "../../_components/Reveal";
-import { merchShopUrl } from "@/content/site";
-import { getMerch } from "@/sanity/lib/data";
+import { getMerch, getSiteSettings } from "@/sanity/lib/data";
 import MailingListBlade from "../../_components/MailingListBlade";
 
 export const revalidate = 60;
@@ -12,7 +11,7 @@ export const metadata = {
 };
 
 export default async function MerchPage() {
-  const merch = await getMerch();
+  const [merch, { merchShopUrl }] = await Promise.all([getMerch(), getSiteSettings()]);
   return (
     <>
       <section className="section section--pagetop wrap">

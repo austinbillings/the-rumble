@@ -1,8 +1,10 @@
 import Link from "next/link";
-import { nav, social, contact, band } from "@/content/site";
+import { nav } from "@/content/site";
+import { getSiteSettings } from "@/sanity/lib/data";
 import { IconInstagram, IconFacebook, IconYouTube } from "./icons";
 
-export default function SiteFooter() {
+export default async function SiteFooter() {
+  const { band, contact, social } = await getSiteSettings();
   const year = 2026;
   return (
     <footer className="ftr">
@@ -52,7 +54,7 @@ export default function SiteFooter() {
 
       <div className="wrap ftr__bottom">
         <span>© {year} {band.fullName}, All Rights Reserved.</span>
-        <span>New Orleans, Louisiana</span>
+        <span>{band.hometown}</span>
       </div>
     </footer>
   );

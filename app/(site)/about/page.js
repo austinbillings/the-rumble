@@ -1,15 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "../../_components/Reveal";
-import { bio, home } from "@/content/site";
+import { getAboutPage, getHomePage, getMembers } from "@/sanity/lib/data";
 import MailingListBlade from "../../_components/MailingListBlade";
 
-export const metadata = {
-  title: "About",
-  description: bio.lead,
-};
+export const revalidate = 60;
 
-export default function BioPage() {
+export async function generateMetadata() {
+  const bio = await getAboutPage();
+  return { title: "About", description: bio.lead };
+}
+
+export default async function BioPage() {
+  const [bio, home, members] = await Promise.all([
+    getAboutPage(),
+    getHomePage(),
+    getMembers(),
+  ]);
   return (
     <>
       <header className="pagehead pagehead--tight">
@@ -42,7 +49,7 @@ export default function BioPage() {
       <section className="section wrap lineup">
         <h2 className="display lineup__title">The Band</h2>
         <ul className="members">
-          {bio.members.map((m) => (
+          {members.map((m) => (
             <li className="member" key={m.name}>
               <span className="member__name">{m.name}</span>
               <span className="member__role">{m.role}</span>

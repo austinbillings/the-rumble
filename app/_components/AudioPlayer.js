@@ -3,7 +3,6 @@
 import {
   createContext, useContext, useRef, useState, useEffect, useCallback,
 } from "react";
-import { tracks, featuredTrackId } from "@/content/site";
 
 const AudioCtx = createContext(null);
 
@@ -15,7 +14,8 @@ export function useAudio() {
 
 // Single, app-wide audio instance. Lives in the root layout so playback
 // survives route changes. No autoplay — playback only starts on user action.
-export function AudioProvider({ children }) {
+// `featuredTrack` (from getFeaturedTrack) is what the Listen button plays.
+export function AudioProvider({ children, featuredTrack = null }) {
   const audioRef = useRef(null);
   const [current, setCurrent] = useState(null);
   const [playing, setPlaying] = useState(false);
@@ -65,7 +65,7 @@ export function AudioProvider({ children }) {
   }, []);
 
   return (
-    <AudioCtx.Provider value={{ current, playing, progress, play, toggle, seek }}>
+    <AudioCtx.Provider value={{ current, playing, progress, play, toggle, seek, featuredTrack }}>
       {children}
       <audio ref={audioRef} preload="none" />
     </AudioCtx.Provider>
@@ -104,10 +104,9 @@ export function HeaderPlayer() {
 }
 
 // "Listen" trigger. Plays the featured track through the one global player.
-// Until a real audio `src` is set in content/site.js, it links to /music.
+// Until the featured album has a track with audio, it links to /music.
 export function ListenButton({ className, label = "Listen" }) {
-  const { play, toggle, current, playing } = useAudio();
-  const track = tracks.find((t) => t.id === featuredTrackId) || tracks[0];
+  const { play, toggle, current, playing, featuredTrack: track } = useAudio();
   const isCurrent = current && track && current.id === track.id;
 
   if (!track || !track.src) {

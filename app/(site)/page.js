@@ -3,15 +3,16 @@ import Link from "next/link";
 import Reveal from "../_components/Reveal";
 import ReleaseGrid from "../_components/ReleaseGrid";
 import { IconArrow } from "../_components/icons";
-import { home, featuredAlbum } from "@/content/site";
-import { getReleases, getVideos } from "@/sanity/lib/data";
+import { getHomePage, getFeaturedAlbum, getReleases, getVideos } from "@/sanity/lib/data";
 import { getUpcomingShows, showDay } from "@/lib/bandsintown";
 import MailingListBlade from "../_components/MailingListBlade";
 
 export const revalidate = 60;
 
 export default async function HomePage() {
-  const [releases, videos, shows] = await Promise.all([
+  const [home, featuredAlbum, releases, videos, shows] = await Promise.all([
+    getHomePage(),
+    getFeaturedAlbum(),
     getReleases(),
     getVideos(),
     getUpcomingShows(4),
@@ -77,15 +78,15 @@ export default async function HomePage() {
             <p className="albumblade__note">{featuredAlbum.note}</p>
             <div className="albumblade__cta">
               <a
-                href={featuredAlbum.primaryCta.href}
+                href={featuredAlbum.listenUrl}
                 target="_blank"
                 rel="noreferrer"
                 className="btn btn--primary"
               >
-                {featuredAlbum.primaryCta.label} <IconArrow style={{ width: 16, height: 16 }} />
+                {featuredAlbum.listenLabel} <IconArrow style={{ width: 16, height: 16 }} />
               </a>
-              <Link href={featuredAlbum.secondaryCta.href} className="btn btn--ghost">
-                {featuredAlbum.secondaryCta.label}
+              <Link href="/shows" className="btn btn--ghost">
+                Tour Dates
               </Link>
             </div>
           </Reveal>
@@ -104,7 +105,7 @@ export default async function HomePage() {
           </Reveal>
           <Reveal className="split__media split__media--tall" delay={120}>
             <Image
-              src={home.galleryImages[1]}
+              src={home.introImage}
               alt="The Rumble"
               width={900}
               height={1200}

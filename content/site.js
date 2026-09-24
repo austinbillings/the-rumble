@@ -1,6 +1,10 @@
 // ============================================================================
-// THE RUMBLE, single source of truth for all site content.
+// THE RUMBLE, static site content.
 // All copy scraped verbatim from therumbleband.com (June 2026).
+//
+// Sanity is now the live source (see sanity/lib/data.js); this file is the
+// fallback when Sanity is unreachable or a field is blank, and the input to
+// scripts/seed-sanity.mjs. `nav` and the Bandsintown ids live only here.
 // ============================================================================
 
 export const band = {
@@ -49,7 +53,6 @@ export const singleListenUrl = "https://found.ee/secondline";
 // HOME
 // ---------------------------------------------------------------------------
 export const home = {
-  heroTitle: "The Rumble",
   heroSubtitle: "Ft. Big Chief Joseph Boudreaux Jr.",
   heroBanner: "Ain't No Dying — new album out now",
   heroBannerHref: albumListenUrl,
@@ -81,7 +84,6 @@ export const featuredAlbum = {
     "Ain't No Dying album cover: Big Chief Joseph Boudreaux Jr. and a Northside Skull and Bone Gang member in a New Orleans cemetery, with a single red feather",
   note: "Out now",
   primaryCta: { label: "Listen Now", href: albumListenUrl },
-  secondaryCta: { label: "Tour Dates", href: "/shows" },
 };
 
 // ---------------------------------------------------------------------------
@@ -188,6 +190,22 @@ export const releases = [
     listenUrl: singleListenUrl,
     tag: "Single",
     cover: "/images/album/second-line-for-me.jpg",
+  },
+  {
+    title: "Burn It Down",
+    year: "2026",
+    note: "Single · Available on all platforms",
+    listenUrl: "https://found.ee/burn-it-down",
+    tag: "Single",
+    cover: "/images/album/burn-it-down.jpg",
+  },
+  {
+    title: "Hurricane (ft. Ivan Neville)",
+    year: "2026",
+    note: "Single · Available on all platforms",
+    listenUrl: "https://found.ee/tr-hurricane",
+    tag: "Single",
+    cover: "/images/album/hurricane.jpg",
   },
   {
     title: "Stories from the Battlefield",

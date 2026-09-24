@@ -1,7 +1,9 @@
 import Link from "next/link";
 import NewsletterForm from "../../_components/NewsletterForm";
 import { IconInstagram, IconFacebook, IconYouTube } from "../../_components/icons";
-import { contact, social } from "@/content/site";
+import { getSiteSettings } from "@/sanity/lib/data";
+
+export const revalidate = 60;
 
 export const metadata = {
   title: "Contact",
@@ -9,7 +11,8 @@ export const metadata = {
     "Booking, general inquiries, and the mailing list for The Rumble.",
 };
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const { contact, social } = await getSiteSettings();
   return (
     <>
       <header className="pagehead">

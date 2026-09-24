@@ -1,7 +1,6 @@
 import Link from "next/link";
 import ReleaseGrid from "../../_components/ReleaseGrid";
-import { social } from "@/content/site";
-import { getReleases } from "@/sanity/lib/data";
+import { getReleases, getSiteSettings } from "@/sanity/lib/data";
 
 export const revalidate = 60;
 
@@ -12,7 +11,7 @@ export const metadata = {
 };
 
 export default async function MusicPage() {
-  const releases = await getReleases();
+  const [releases, { social }] = await Promise.all([getReleases(), getSiteSettings()]);
   return (
     <>
       <section className="section section--pagetop wrap">

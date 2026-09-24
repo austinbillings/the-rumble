@@ -1,6 +1,8 @@
 import BandsintownWidget from "../../_components/BandsintownWidget";
-import { contact, social } from "@/content/site";
+import { getSiteSettings } from "@/sanity/lib/data";
 import MailingListBlade from "../../_components/MailingListBlade";
+
+export const revalidate = 60;
 
 export const metadata = {
   title: "Shows",
@@ -8,7 +10,8 @@ export const metadata = {
     "Upcoming tour dates and tickets for The Rumble.",
 };
 
-export default function ShowsPage() {
+export default async function ShowsPage() {
+  const { contact, social } = await getSiteSettings();
   return (
     <>
       <header className="pagehead pagehead--tight">

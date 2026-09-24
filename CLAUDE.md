@@ -5,7 +5,7 @@ the Grammy-nominated New Orleans Mardi Gras Indian funk band.
 Live preview: **the-rumble.vercel.app**.
 
 Stack: **Next.js 15 (App Router) + React 19**, plain-CSS design system, `next/font`.
-`content/site.js` is the single source of truth for all copy/data (until the CMS migration).
+Content lives in **Sanity**; `content/site.js` is the fallback + seed source (see CMS below).
 
 ## Creative direction
 
@@ -49,8 +49,16 @@ Stack: **Next.js 15 (App Router) + React 19**, plain-CSS design system, `next/fo
   Form has a `company` honeypot field.
 - **CMS (Sanity):** embedded Studio at `/studio` (`app/studio/[[...tool]]/page.jsx`),
   `sanity.config.js`, and `sanity/` (`env.js`, `lib/client.js`, `lib/image.js`,
-  `schemaTypes/*`). Schemas: siteSettings, album, release, video, member, merchItem.
-  **Pages do NOT read from Sanity yet** — that migration is pending.
+  `schemaTypes/*`). Singletons (fixed `_id` = type name): siteSettings, homePage,
+  aboutPage, suitPage. Collections: album (featured one = homepage blade + header
+  Listen track), release, video, member, merchItem.
+  **All pages + the footer read via getters in `sanity/lib/data.js`** (60s ISR). Each
+  GROQ projection returns the same shape as its `content/site.js` fallback, used when
+  Sanity is unreachable, empty, or a singleton field is blank. Only `nav` and the
+  Bandsintown ids are code-only.
+  **Seed/reset:** `node --env-file=.env.local scripts/seed-sanity.mjs` pushes
+  `content/site.js` + `public/` images into Sanity (idempotent, but overwrites Studio
+  edits to those docs).
 
 ## Setup required to run everything
 
@@ -78,12 +86,14 @@ Full notes in `SANITY_SETUP.md`.
    resize/optimize into `public/images/`; wire the album cover as hero + refresh the
    gallery. Grab the hi-res "Ain't No Dying" cover. (All four release sleeves are now
    in `public/images/album/`, so no release uses the `ReleaseGrid` fallback tile.)
-2. **Sanity content migration** — after the project exists: fetch in pages via
-   `sanity/lib/client.js`, then retire the static data in `content/site.js`.
+2. **Sanity** — content is migrated and seeded (Sept 2026). Remaining: add
+   `localhost:3000` + production domain as Studio hosts/CORS origins; set up a
+   revalidation webhook if 60s ISR is too slow for editors.
 3. **Shopify store** — need the store domain + a **Storefront API token**; build the
    storefront + product components into the site.
 4. **Audio** — get hosted MP3s (previews or full tracks) from the band; fill
-   `tracks[].src`; add play triggers on the Music page.
+   the featured album's tracks in Sanity (audio file or URL); add play triggers on the
+   Music page.
 5. **Merch prices** — confirmed: `$35` tanks, `$9` sticker set. Tee prices unknown
    ("View in shop" placeholders). Repoint merch links when the store moves off the
    GoDaddy shop.
