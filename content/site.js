@@ -54,11 +54,11 @@ export const singleListenUrl = "https://found.ee/secondline";
 // ---------------------------------------------------------------------------
 export const home = {
   heroSubtitle: "Ft. Big Chief Joseph Boudreaux Jr.",
-  heroBanner: "Ain't No Dying — new album out now",
+  heroBanner: "Ain't No Dying — nominated for Best Regional Roots Music Album",
   heroBannerHref: albumListenUrl,
   heroImage: "/images/band/noe-studio-green.jpg",
   intro:
-    "The Rumble was formed in 2021, and has since been nominated two times for a Grammy. They are a dynamic band dedicated to preserving and evolving New Orleans' rich musical heritage. Fronted by Big Chief Joseph Boudreaux Jr. of the Young Eagles Black Masking Indian tribe, the band seamlessly blends past, present, and future elements of New Orleans culture into their sound. Their songs draw from Mardi Gras Indian funk, brass band traditions, jazz, and hip-hop, creating a vibrant and modern take on iconic styles pioneered by groups like The Meters, Wild Magnolias, and Neville Brothers.",
+    "The Rumble was formed in 2021, and has since been nominated three times for a Grammy. They are a dynamic band dedicated to preserving and evolving New Orleans' rich musical heritage. Fronted by Big Chief Joseph Boudreaux Jr. of the Young Eagles Black Masking Indian tribe, the band seamlessly blends past, present, and future elements of New Orleans culture into their sound. Their songs draw from Mardi Gras Indian funk, brass band traditions, jazz, and hip-hop, creating a vibrant and modern take on iconic styles pioneered by groups like The Meters, Wild Magnolias, and Neville Brothers.",
   body:
     "The Rumble carries forward the vibrant legacy of Mardi Gras Indian funk, a genre pioneered by Big Chief Monk Boudreaux (Joseph's father) and the Wild Magnolias. Led by Grammy-nominated singer and respected Black Masking Indian leader Big Chief Joseph Boudreaux Jr., the band blends the traditional rhythms of black masking culture with modern New Orleans sounds. Trumpeter Aurélien Barnes, a member of the Northside Skull and Bone Gang, represents this iconic carnival tradition, while trombonist José Maize of the TBC Brass Band electrifies audiences at second line parades, embodying New Orleans' brass band heritage. Together, they honor the city's rich musical traditions while pushing its boundaries into the future.",
   // Press photos by Nóe Cugny (June 2026 batch).
@@ -93,7 +93,7 @@ export const bio = {
   heading: "About The Rumble",
   lead: "On Mardi Gras morning, your eyes may feast on the intricate and elaborate beadwork of the Black Masking Indians as they dance down the street, but the first thing you'll hear when they make their way toward you is the back line, known as “the rumble.” Fronted by Big Chief Joseph Boudreaux Jr. of the Young Eagles Black Masking Indian tribe, the band seamlessly blends past, present, and future elements of New Orleans culture into their sound.",
   accolades:
-    "The ensemble has received two GRAMMY nominations for Best Regional Roots Album for their albums Live at the Maple Leaf and Stories From The Battlefield.",
+    "The ensemble has received three GRAMMY nominations for Best Regional Roots Album, for their albums Live at the Maple Leaf, Stories From The Battlefield, and Ain't No Dying.",
   image: "/images/band/noe-studio-laughs.jpg",
   // Roles are deliberately short: the lineup list is one line per member.
   members: [

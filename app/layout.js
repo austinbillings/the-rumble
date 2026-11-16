@@ -35,11 +35,11 @@ export const metadata = {
     template: "%s · The Rumble",
   },
   description:
-    "The Rumble is a Grammy-nominated New Orleans band led by Big Chief Joseph Boudreaux Jr., blending Mardi Gras Indian funk, brass band traditions, jazz, and hip-hop.",
+    "The Rumble is a three-time Grammy-nominated New Orleans band led by Big Chief Joseph Boudreaux Jr., blending Mardi Gras Indian funk, brass band traditions, jazz, and hip-hop. New album Ain't No Dying is nominated for Best Regional Roots Music Album.",
   openGraph: {
     title: "The Rumble, Ft. Big Chief Joseph Boudreaux Jr.",
     description:
-      "Grammy-nominated New Orleans Mardi Gras Indian funk. New album Ain't No Dying out now.",
+      "Three-time Grammy-nominated New Orleans Mardi Gras Indian funk. New album Ain't No Dying nominated for Best Regional Roots Music Album.",
     type: "website",
     images: ["/images/band/noe-studio-green.jpg"],
   },

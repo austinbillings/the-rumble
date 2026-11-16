@@ -38,7 +38,7 @@ export default async function HomePage() {
             target="_blank"
             rel="noreferrer"
           >
-            <span className="pill">New</span>
+            <span className="pill">Grammy Nominee</span>
             {home.heroBanner}
           </a>
           <h1 className="display">
