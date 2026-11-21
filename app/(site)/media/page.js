@@ -12,15 +12,30 @@ export const metadata = {
 
 export default async function MediaPage() {
   const [videos, { social }] = await Promise.all([getVideos(), getSiteSettings()]);
-  const performances = videos.filter((v) => v.category !== "feature");
+  const musicVideos = videos.filter((v) => v.category === "music-video");
+  const performances = videos.filter((v) => v.category !== "feature" && v.category !== "music-video");
+  const PerfHeading = musicVideos.length > 0 ? "h2" : "h1";
   const features = videos.filter((v) => v.category === "feature");
 
   return (
     <>
-      <section className="section section--pagetop wrap">
-        <h1 className="display display--sub" style={{ marginBottom: "1.75rem" }}>
+      {musicVideos.length > 0 && (
+        <section className="section section--pagetop wrap">
+          <h1 className="display display--sub" style={{ marginBottom: "1.75rem" }}>
+            Music Videos
+          </h1>
+          <div className="videogrid">
+            {musicVideos.map((v) => (
+              <VideoCard key={v.id} {...v} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      <section className={musicVideos.length > 0 ? "section--tight wrap" : "section section--pagetop wrap"}>
+        <PerfHeading className="display display--sub" style={{ marginBottom: "1.75rem" }}>
           Live Performances &amp; Sessions
-        </h1>
+        </PerfHeading>
         <div className="videogrid">
           {performances.map((v) => (
             <VideoCard key={v.id} {...v} />

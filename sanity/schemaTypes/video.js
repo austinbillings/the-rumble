@@ -12,6 +12,7 @@ export default {
       type: "string",
       options: {
         list: [
+          { title: "Music Video", value: "music-video" },
           { title: "Performance", value: "performance" },
           { title: "Feature", value: "feature" },
         ],

@@ -230,6 +230,9 @@ export const releases = [
 // MEDIA, live performance & studio videos (YouTube)
 // ---------------------------------------------------------------------------
 export const videos = [
+  // --- Music videos (Ain't No Dying) ---
+  { id: "1mfhYhP0AR0", title: "Burn It Down", context: "Official music video", category: "music-video" },
+  { id: "FJWicosMd3s", title: "Second Line For Me", context: "Official music video · GroundUP Music", category: "music-video" },
   // --- Live performances & sessions ---
   { id: "orFrPER_S50", title: "Trouble", context: "Live at Portland Waterfront Blues Festival", category: "performance" },
   { id: "0jfh06vPmbM", title: "Now You Know", context: "Live at Portland Waterfront Blues Festival", category: "performance" },
